@@ -3,6 +3,7 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Events from "@/components/sections/Events";
+import Archive from "@/components/sections/Archive";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <About />
         <Events />
+        <Archive />
       </main>
       
       <Footer />
