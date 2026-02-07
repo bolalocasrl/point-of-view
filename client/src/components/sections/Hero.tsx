@@ -87,9 +87,9 @@ export default function Hero() {
             from the white logo. This is efficient and requires no external processing.
           */}
           <img 
-            src="/assets/hero-logo.png" 
+            src="/assets/hero-logo-white.png" 
             alt="POINT OF VIEW" 
-            className="w-full h-full object-contain mix-blend-screen drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+            className="w-full h-full object-contain drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]"
           />
         </motion.div>
 
