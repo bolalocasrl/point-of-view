@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
 
 const archiveItems = [
-  "/assets/archive-1.png",
-  "/assets/archive-2.png",
-  "/assets/archive-3.png",
-  "/assets/archive-4.png",
-  "/assets/archive-5.png",
-  "/assets/archive-6.png",
-  "/assets/archive-1.png", // Duplicate for fullness if needed
-  "/assets/archive-2.png", // Duplicate for fullness if needed
+  "/assets/tshbo.jpg",
+  "/assets/tshbcn.jpg",
+  "/assets/teos.jpg",
+  "/assets/milano.jpg",
+  "/assets/guiborato.jpg",
+  "/assets/inpulse.jpg",
+  "/assets/tonnodisco.jpg",
 ];
 
 export default function Archive() {
