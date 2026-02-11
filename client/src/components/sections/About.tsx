@@ -6,7 +6,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
         <div className="md:col-span-4">
           <span className="block text-xs font-bold uppercase tracking-widest text-white/50 mb-4 sticky top-32">
-            (01) The Concept
+            (01) Vision
           </span>
         </div>
         
@@ -16,30 +16,42 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-medium leading-tight text-white mb-12 font-display"
+            className="text-4xl md:text-6xl lg:text-7xl font-medium leading-tight text-white mb-16 font-display"
           >
-            We curate immersive <span className="italic text-white/50">sonic landscapes</span> where electronic music meets visual art.
+            Esperienze immersive dove <span className="italic text-white/50">musica elettronica e arte</span> convivono in un unico punto di vista.
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
             <motion.div
                initial={{ opacity: 0, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ delay: 0.2, duration: 0.8 }}
             >
-              <p className="text-lg text-white/80 font-body leading-relaxed">
-                Point Of View is a Barcelona-based collective exploring the intersection of underground club culture and experimental art installation. We believe the dancefloor is a space for radical expression.
+              <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-6 opacity-80">History</h3>
+              <p className="text-lg text-white/90 font-body leading-relaxed mb-4">
+                Point Of View nasce nel 2016.
+              </p>
+              <p className="text-lg text-white/60 font-body leading-relaxed">
+                Milano — Lisbona — Barcellona — Formentera — Bologna.
               </p>
             </motion.div>
+
             <motion.div
                initial={{ opacity: 0, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ delay: 0.3, duration: 0.8 }}
             >
-              <p className="text-lg text-white/80 font-body leading-relaxed">
-                Our events are not just parties; they are carefully crafted experiences designed to alter perception and challenge the conventional club format. Expect raw techno, hypnotic grooves, and immersive visuals.
+               <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-6 opacity-80">Focus</h3>
+              <p className="text-lg text-white/90 font-body leading-relaxed mb-4">
+                Non solo musica, ma un’esperienza visiva, sonora e spaziale.
+              </p>
+              <p className="text-lg text-white/60 font-body leading-relaxed mb-2">
+                DJs — Scenografi — Performance — Visual & Light Design.
+              </p>
+              <p className="text-base text-white/40 font-body leading-relaxed mt-4">
+                Il pubblico non osserva, è parte dell'ambiente.
               </p>
             </motion.div>
           </div>
