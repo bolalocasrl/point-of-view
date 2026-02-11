@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useRef } from "react";
 
 const events = [
   {
@@ -6,7 +7,7 @@ const events = [
     date: "MAR 14",
     title: "SENSORY OVERLOAD",
     location: "Secret Warehouse, Poblenou",
-    image: "/assets/event-1.png",
+    video: "/assets/carino.mp4",
     status: "Upcoming"
   },
   {
@@ -14,7 +15,7 @@ const events = [
     date: "APR 02",
     title: "LIQUID METAL",
     location: "Input Dance Club",
-    image: "/assets/event-2.png",
+    video: "/assets/forumstationam.mp4",
     status: "Tickets Soon"
   },
   {
@@ -22,10 +23,79 @@ const events = [
     date: "MAY 20",
     title: "RED SHIFT",
     location: "Razzmatazz (The Loft)",
-    image: "/assets/event-3.png",
+    video: "/assets/guiporatovideo.mp4",
     status: "Announced"
   }
 ];
+
+function VideoCard({ event, index }: { event: typeof events[0], index: number }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleMouseEnter = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = false;
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+    }
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1, duration: 0.6 }}
+      className="group relative cursor-pointer"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div className="aspect-[3/4] overflow-hidden mb-6 bg-white/5 relative">
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10 pointer-events-none" />
+        
+        <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full h-full"
+        >
+             <video 
+              ref={videoRef}
+              src={event.video}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-500 grayscale group-hover:grayscale-0"
+            />
+        </motion.div>
+
+        {/* Overlay Badge */}
+        <div className="absolute top-4 left-4 z-20 bg-black/50 backdrop-blur-md px-3 py-1 border border-white/10 rounded-full">
+          <span className="text-[10px] uppercase tracking-widest font-bold text-white">
+            {event.status}
+          </span>
+        </div>
+      </div>
+
+      <div className="flex justify-between items-start border-b border-white/10 pb-4 group-hover:border-white/40 transition-colors">
+        <div>
+          <h3 className="text-2xl font-display font-bold uppercase mb-1 group-hover:text-stroke transition-all duration-300">
+            {event.title}
+          </h3>
+          <p className="text-sm text-white/60 font-body uppercase tracking-wide">
+            {event.location}
+          </p>
+        </div>
+        <span className="text-xl font-display font-light text-white/80">
+          {event.date}
+        </span>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function Events() {
   return (
@@ -37,7 +107,7 @@ export default function Events() {
               (02) Agenda
             </span>
             <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tight">
-              Upcoming
+              Around Europe
             </h2>
           </div>
           <button className="hidden md:block px-6 py-3 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all duration-300 uppercase text-xs tracking-widest font-bold">
@@ -47,46 +117,7 @@ export default function Events() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {events.map((event, index) => (
-            <motion.div
-              key={event.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="group relative cursor-pointer"
-            >
-              <div className="aspect-[3/4] overflow-hidden mb-6 bg-white/5 relative">
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10" />
-                <motion.img 
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  src={event.image} 
-                  alt={event.title}
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                />
-                
-                {/* Overlay Badge */}
-                <div className="absolute top-4 left-4 z-20 bg-black/50 backdrop-blur-md px-3 py-1 border border-white/10 rounded-full">
-                  <span className="text-[10px] uppercase tracking-widest font-bold text-white">
-                    {event.status}
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex justify-between items-start border-b border-white/10 pb-4 group-hover:border-white/40 transition-colors">
-                <div>
-                  <h3 className="text-2xl font-display font-bold uppercase mb-1 group-hover:text-stroke transition-all duration-300">
-                    {event.title}
-                  </h3>
-                  <p className="text-sm text-white/60 font-body uppercase tracking-wide">
-                    {event.location}
-                  </p>
-                </div>
-                <span className="text-xl font-display font-light text-white/80">
-                  {event.date}
-                </span>
-              </div>
-            </motion.div>
+            <VideoCard key={event.id} event={event} index={index} />
           ))}
         </div>
         
