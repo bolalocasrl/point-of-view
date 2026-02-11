@@ -24,7 +24,7 @@ export default function Navbar() {
     >
       <Link href="/">
         <a className="block hover:opacity-70 transition-opacity">
-          <img src="/assets/logo.png" alt="Point Of View" className="h-12 w-auto md:h-16 rounded-full" />
+          <img src="/assets/logo-final.png" alt="Point Of View" className="h-12 w-auto md:h-16 rounded-full" />
         </a>
       </Link>
 

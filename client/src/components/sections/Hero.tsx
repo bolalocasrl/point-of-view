@@ -87,7 +87,7 @@ export default function Hero() {
             from the white logo. This is efficient and requires no external processing.
           */}
           <img 
-            src="/assets/hero-logo-white.png" 
+            src="/assets/logo-final.png" 
             alt="POINT OF VIEW" 
             className="w-full h-full object-contain drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]"
           />
