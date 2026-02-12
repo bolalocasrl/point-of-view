@@ -80,7 +80,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-[80vw] max-w-[600px] aspect-[16/9] flex items-center justify-center"
+          className="relative w-[90vw] max-w-[900px] aspect-[16/9] flex items-center justify-center"
         >
           {/* 
             Using mix-blend-mode: screen to effectively remove the black background 
