@@ -2,6 +2,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
+import Upcoming from "@/components/sections/Upcoming";
 import Events from "@/components/sections/Events";
 import Archive from "@/components/sections/Archive";
 
@@ -16,6 +17,7 @@ export default function Home() {
       <main>
         <Hero />
         <About />
+        <Upcoming />
         <Events />
         <Archive />
       </main>

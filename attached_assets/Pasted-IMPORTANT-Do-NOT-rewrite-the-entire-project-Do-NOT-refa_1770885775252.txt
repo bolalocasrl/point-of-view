@@ -1,0 +1,78 @@
+IMPORTANT: 
+Do NOT rewrite the entire project.
+Do NOT refactor existing structure.
+Only add and modify the minimum necessary files/components.
+Keep current design system, fonts and styling.
+Keep performance optimized.
+No external heavy libraries.
+Use lightweight CSS and minimal JS only.
+
+TASKS:
+
+1) NEW SECTION – "Upcoming Events"
+Create a new section called "Upcoming Events" placed BEFORE the existing "Around Europe" section.
+
+Structure:
+- Section title: "Upcoming Events"
+- Two event cards side by side (responsive: stacked on mobile)
+
+Card 1:
+Image: use file "calbi"
+Text:
+29 March – Barcelona
+Button: "Tickets"
+
+Card 2:
+Image: use file "forum"
+Text:
+10 April – Lisbon
+Button: "Tickets"
+
+Tickets button behavior:
+On click, open a clean minimal dropdown menu (no external libraries).
+Dropdown options:
+- RA
+- Xceed
+- Shotgun
+- Dice
+
+Dropdown should:
+- Animate smoothly (fade + slight slide)
+- Close when clicking outside
+- Be lightweight (pure React + CSS)
+
+2) LOGO REPLACEMENT
+Replace current logo (Hero section and top-left navbar) with image file "logopov".
+Keep same sizing logic and responsiveness.
+Do NOT break layout.
+
+3) INTRO ANIMATION – LOGO RAIN
+Create a lightweight intro animation that plays ONLY on first load:
+
+Effect:
+- Many small "logopov" logos fall from top to bottom (like rain)
+- Duration: 2–3 seconds
+- After animation ends, logos fade out completely
+- Then normal website is visible
+
+Requirements:
+- Use pure CSS animation + small JS logic
+- No canvas libraries
+- No heavy animation frameworks
+- Limit number of falling logos for performance
+- Must not affect scrolling or layout
+- Must not repeat on every page interaction (only first load)
+
+4) PERFORMANCE RULES
+- Do not install new packages
+- Do not modify index.html except if strictly necessary
+- Do not change meta tags
+- Keep everything clean and production-ready
+- Keep animations GPU-friendly (transform + opacity)
+
+Return only:
+- The new section component
+- The logo replacement code
+- The intro animation component
+- Any minimal CSS needed
+- Exact instructions where to paste each part
