@@ -15,6 +15,9 @@ export default function SocialHub() {
     </svg>
   );
 
+  const boloSrc = "/assets/tshbo_new.mp4";
+  const bcnSrc = "/assets/tshbcn_new.mp4";
+
   return (
     <section className="py-24 md:py-32 px-6 md:px-12 bg-black text-white border-t border-white/10">
       <EyeMask />
@@ -39,7 +42,7 @@ export default function SocialHub() {
             onMouseEnter={() => {
               if (boloRef.current) {
                 boloRef.current.muted = false;
-                boloRef.current.play();
+                boloRef.current.play().catch(() => {});
               }
             }}
             onMouseLeave={() => {
@@ -55,10 +58,11 @@ export default function SocialHub() {
               >
                 <video 
                   ref={boloRef}
-                  src="/assets/tshbo.mp4"
+                  src={boloSrc}
                   muted
                   loop
                   playsInline
+                  autoPlay
                   className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110"
                   style={{ clipPath: "url(#eye-mask)" }}
                 />
@@ -79,7 +83,7 @@ export default function SocialHub() {
             onMouseEnter={() => {
               if (bcnRef.current) {
                 bcnRef.current.muted = false;
-                bcnRef.current.play();
+                bcnRef.current.play().catch(() => {});
               }
             }}
             onMouseLeave={() => {
@@ -95,10 +99,11 @@ export default function SocialHub() {
               >
                 <video 
                   ref={bcnRef}
-                  src="/assets/tshbcn.mp4"
+                  src={bcnSrc}
                   muted
                   loop
                   playsInline
+                  autoPlay
                   className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110"
                   style={{ clipPath: "url(#eye-mask)" }}
                 />
