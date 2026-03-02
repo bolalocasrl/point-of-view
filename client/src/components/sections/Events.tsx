@@ -125,9 +125,6 @@ export default function Events() {
               Around Europe
             </h2>
           </div>
-          <button className="hidden md:block px-6 py-3 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all duration-300 uppercase text-xs tracking-widest font-bold">
-            View Archive
-          </button>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -143,12 +140,6 @@ export default function Events() {
               }}
             />
           ))}
-        </div>
-        
-        <div className="mt-12 md:hidden">
-           <button className="w-full px-6 py-4 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all duration-300 uppercase text-xs tracking-widest font-bold">
-            View Archive
-          </button>
         </div>
       </div>
     </section>
