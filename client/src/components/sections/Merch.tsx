@@ -2,11 +2,13 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const products = [
-  { id: 1, name: "POV SIGNATURE TEE", price: "€35", image: "/assets/tshbo.jpg" }, // Placeholder, use real images if available
-  { id: 2, name: "UNDERGROUND HOODIE", price: "€65", image: "/assets/tshbcn.jpg" },
-  { id: 3, name: "VISION TOTE BAG", price: "€25", image: "/assets/milano.jpg" },
-  { id: 4, name: "LOGO CAP", price: "€30", image: "/assets/teos.jpg" },
-  { id: 5, name: "LIMITED PRINT", price: "€45", image: "/assets/inpulse.jpg" },
+  { id: 1, name: "POV SIGNATURE TEE", price: "€35", image: "/merch/black-t-shirts.jpg" },
+  { id: 2, name: "MONSTER TEE", price: "€35", image: "/merch/POV_T-SHORT_MONSTER.jpg" },
+  { id: 3, name: "SOLUNA TEE", price: "€35", image: "/merch/soluna.jpg" },
+  { id: 4, name: "DRAWING TEE", price: "€35", image: "/merch/T-SHORT_DRRAWING.jpg" },
+  { id: 5, name: "GNOMO TEE", price: "€35", image: "/merch/gnomo.jpg" },
+  { id: 6, name: "VISION TEE", price: "€35", image: "/merch/maglietta_pov.jpg" },
+  { id: 7, name: "CLASSIC TEE", price: "€35", image: "/merch/pov_t-shorts.jpg" },
 ];
 
 export default function Merch() {
