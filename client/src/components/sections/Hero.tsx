@@ -144,17 +144,15 @@ export default function Hero() {
           className="relative w-[90vw] md:w-[80vw] max-w-[1600px] aspect-[16/9] flex items-center justify-center"
         >
           <model-viewer
-            src="/POV-DANGELO.glb"
+            src="/POV-DANGELO.glb?v=3"
             alt="POINT OF VIEW 3D Logo"
             auto-rotate
-            rotation-per-second="30deg"
-            disable-zoom
-            disable-pan
-            disable-tap
-            camera-controls="false"
+            auto-rotate-delay="0"
+            rotation-per-second="10deg"
+            shadow-intensity="1"
+            exposure="1.2"
             interaction-prompt="none"
-            style={{ width: '100%', height: '100%', backgroundColor: 'transparent' }}
-            class="drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]"
+            style={{ width: '100%', height: '100%', background: 'transparent' }}
           ></model-viewer>
         </motion.div>
 
