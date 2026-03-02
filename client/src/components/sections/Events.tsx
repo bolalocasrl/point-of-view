@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const events = [
   {
@@ -28,17 +28,27 @@ const events = [
   }
 ];
 
-function VideoCard({ event, index }: { event: typeof events[0], index: number }) {
+function VideoCard({ event, index, isActive, onToggle }: { event: typeof events[0], index: number, isActive: boolean, onToggle: (e: React.MouseEvent) => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const handleMouseEnter = () => {
+  useEffect(() => {
     if (videoRef.current) {
+      if (isActive) {
+        videoRef.current.muted = false;
+      } else {
+        videoRef.current.muted = true;
+      }
+    }
+  }, [isActive]);
+
+  const handleMouseEnter = () => {
+    if (window.matchMedia('(hover: hover)').matches && videoRef.current) {
       videoRef.current.muted = false;
     }
   };
 
   const handleMouseLeave = () => {
-    if (videoRef.current) {
+    if (window.matchMedia('(hover: hover)').matches && videoRef.current) {
       videoRef.current.muted = true;
     }
   };
@@ -49,18 +59,15 @@ function VideoCard({ event, index }: { event: typeof events[0], index: number })
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.6 }}
-      className="group relative cursor-pointer"
+      className={`group relative cursor-pointer ${isActive ? 'active' : ''}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={onToggle}
     >
       <div className="aspect-[3/4] overflow-hidden mb-6 bg-white/5 relative">
-        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-black/20 md:group-hover:bg-transparent group-[.active]:bg-transparent transition-colors z-10 pointer-events-none" />
         
-        <motion.div
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full h-full"
-        >
+        <div className="w-full h-full transition-transform duration-700 ease-[0.16,1,0.3,1] md:group-hover:scale-105 group-[.active]:scale-105">
              <video 
               ref={videoRef}
               src={event.video}
@@ -68,9 +75,9 @@ function VideoCard({ event, index }: { event: typeof events[0], index: number })
               muted
               loop
               playsInline
-              className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-500 grayscale group-hover:grayscale-0"
+              className="w-full h-full object-cover opacity-80 md:group-hover:opacity-100 group-[.active]:opacity-100 transition-all duration-500 grayscale md:group-hover:grayscale-0 group-[.active]:grayscale-0"
             />
-        </motion.div>
+        </div>
 
         {/* Overlay Badge */}
         <div className="absolute top-4 left-4 z-20 bg-black/50 backdrop-blur-md px-3 py-1 border border-white/10 rounded-full">
@@ -80,9 +87,9 @@ function VideoCard({ event, index }: { event: typeof events[0], index: number })
         </div>
       </div>
 
-      <div className="flex justify-between items-start border-b border-white/10 pb-4 group-hover:border-white/40 transition-colors">
+      <div className="flex justify-between items-start border-b border-white/10 pb-4 md:group-hover:border-white/40 group-[.active]:border-white/40 transition-colors">
         <div>
-          <h3 className="text-2xl font-display font-bold uppercase mb-1 group-hover:text-stroke transition-all duration-300">
+          <h3 className="text-2xl font-display font-bold uppercase mb-1 md:group-hover:text-stroke group-[.active]:text-stroke transition-all duration-300">
             {event.title}
           </h3>
           <p className="text-sm text-white/60 font-body uppercase tracking-wide">
@@ -98,6 +105,14 @@ function VideoCard({ event, index }: { event: typeof events[0], index: number })
 }
 
 export default function Events() {
+  const [activeEvent, setActiveEvent] = useState<number | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = () => setActiveEvent(null);
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
+
   return (
     <section id="events" className="py-24 md:py-32 px-6 md:px-12 bg-black text-white border-t border-white/10">
       <div className="max-w-7xl mx-auto">
@@ -117,7 +132,16 @@ export default function Events() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {events.map((event, index) => (
-            <VideoCard key={event.id} event={event} index={index} />
+            <VideoCard 
+              key={event.id} 
+              event={event} 
+              index={index} 
+              isActive={activeEvent === event.id}
+              onToggle={(e) => {
+                e.stopPropagation();
+                setActiveEvent(activeEvent === event.id ? null : event.id);
+              }}
+            />
           ))}
         </div>
         

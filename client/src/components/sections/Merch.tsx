@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const products = [
   { id: 1, name: "POV SIGNATURE TEE", price: "€35", image: "/assets/tshbo.jpg" }, // Placeholder, use real images if available
@@ -9,6 +10,14 @@ const products = [
 ];
 
 export default function Merch() {
+  const [activeProduct, setActiveProduct] = useState<number | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = () => setActiveProduct(null);
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
+
   return (
     <section id="products" className="py-24 md:py-32 bg-black text-white border-t border-white/10 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-10 md:mb-24 flex flex-col md:flex-row justify-between items-start md:items-end z-10 relative">
@@ -33,23 +42,27 @@ export default function Merch() {
             return (
               <div
                 key={product.id}
-                className="absolute top-0 left-0 w-full h-full origin-center group"
+                className={`absolute top-0 left-0 w-full h-full origin-center group ${activeProduct === product.id ? 'active' : ''}`}
                 style={{
                   transform: `rotateY(${angle}deg) translateZ(350px)`,
                   backfaceVisibility: 'hidden'
                 }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveProduct(activeProduct === product.id ? null : product.id);
+                }}
               >
-                <div className="w-full h-full bg-[#0a0a0a] border border-white/10 p-4 flex flex-col transition-all duration-500 group-hover:scale-110 group-hover:border-white/40 cursor-pointer">
+                <div className="w-full h-full bg-[#0a0a0a] border border-white/10 p-4 flex flex-col transition-all duration-500 md:group-hover:scale-110 group-[.active]:scale-110 md:group-hover:border-white/40 group-[.active]:border-white/40 cursor-pointer">
                   <div className="flex-1 bg-white/5 relative overflow-hidden mb-4">
                     {/* Placeholder for merch image */}
                     <img 
                       src={product.image} 
                       alt={product.name}
-                      className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-300 grayscale"
+                      className="w-full h-full object-cover opacity-60 md:group-hover:opacity-100 group-[.active]:opacity-100 transition-opacity duration-300 grayscale md:group-hover:grayscale-0 group-[.active]:grayscale-0"
                     />
                   </div>
                   <div className="flex justify-between items-end">
-                    <h3 className="font-display font-bold uppercase text-lg group-hover:text-stroke transition-all">{product.name}</h3>
+                    <h3 className="font-display font-bold uppercase text-lg md:group-hover:text-stroke group-[.active]:text-stroke transition-all">{product.name}</h3>
                     <span className="font-body text-white/60">{product.price}</span>
                   </div>
                 </div>

@@ -41,6 +41,59 @@ export default function Hero() {
     y.set(0);
   };
 
+  // Gyroscope effect for mobile
+  useEffect(() => {
+    const handleOrientation = (e: DeviceOrientationEvent) => {
+      if (e.beta === null || e.gamma === null) return;
+      
+      // Beta: front-to-back tilt [-180, 180]. 45 deg is a normal holding position.
+      // Gamma: left-to-right tilt [-90, 90]
+      let yVal = (e.beta - 45) / 45; 
+      let xVal = e.gamma / 45;
+      
+      // Clamp values
+      yVal = Math.max(-0.5, Math.min(0.5, yVal));
+      xVal = Math.max(-0.5, Math.min(0.5, xVal));
+      
+      x.set(xVal);
+      y.set(yVal);
+    };
+
+    const requestPermission = async () => {
+      if (
+        typeof DeviceOrientationEvent !== 'undefined' &&
+        typeof (DeviceOrientationEvent as any).requestPermission === 'function'
+      ) {
+        try {
+          const permission = await (DeviceOrientationEvent as any).requestPermission();
+          if (permission === 'granted') {
+            window.addEventListener('deviceorientation', handleOrientation);
+          }
+        } catch (error) {
+          console.error("Error requesting device orientation permission", error);
+        }
+      } else {
+        window.addEventListener('deviceorientation', handleOrientation);
+      }
+    };
+
+    // Request permission on first touch interaction
+    const handleFirstTouch = () => {
+      requestPermission();
+      window.removeEventListener('touchstart', handleFirstTouch);
+      window.removeEventListener('click', handleFirstTouch);
+    };
+    
+    window.addEventListener('touchstart', handleFirstTouch);
+    window.addEventListener('click', handleFirstTouch);
+    
+    return () => {
+      window.removeEventListener('touchstart', handleFirstTouch);
+      window.removeEventListener('click', handleFirstTouch);
+      window.removeEventListener('deviceorientation', handleOrientation);
+    };
+  }, [x, y]);
+
   return (
     <section 
       ref={containerRef} 
