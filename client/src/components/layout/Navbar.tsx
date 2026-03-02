@@ -28,16 +28,15 @@ export default function Navbar() {
         </a>
       </Link>
 
-      <div className="flex items-center gap-8 text-sm font-medium tracking-wide uppercase font-body">
-        <a href="#about" className="hover:line-through decoration-1 underline-offset-4 transition-all hidden md:block">About</a>
+      <div className="flex items-center gap-6 text-sm font-medium tracking-wide uppercase font-body">
         <a href="#events" className="hover:line-through decoration-1 underline-offset-4 transition-all hidden md:block">Events</a>
+        <a href="#vision" className="hover:line-through decoration-1 underline-offset-4 transition-all hidden md:block">Vision</a>
+        <a href="#products" className="hover:line-through decoration-1 underline-offset-4 transition-all hidden md:block">Products</a>
         <a 
-          href="https://instagram.com" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="px-4 py-2 border border-white rounded-full hover:bg-white hover:text-black transition-colors duration-300"
+          href="#contacts" 
+          className="px-6 py-2 border-2 border-white rounded-full hover:bg-white hover:text-black transition-colors duration-300 font-bold"
         >
-          Follow
+          Contacts
         </a>
       </div>
     </motion.nav>

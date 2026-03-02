@@ -5,6 +5,8 @@ import About from "@/components/sections/About";
 import Upcoming from "@/components/sections/Upcoming";
 import Events from "@/components/sections/Events";
 import Archive from "@/components/sections/Archive";
+import SocialHub from "@/components/sections/SocialHub";
+import Merch from "@/components/sections/Merch";
 
 export default function Home() {
   return (
@@ -20,6 +22,8 @@ export default function Home() {
         <Upcoming />
         <Events />
         <Archive />
+        <SocialHub />
+        <Merch />
       </main>
       
       <Footer />

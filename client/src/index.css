@@ -26,6 +26,8 @@
   --radius-sm: 0rem;
   --radius-md: 0rem;
   --radius-lg: 0rem;
+
+  --animate-vortex: vortex 30s linear infinite;
 }
 
 :root {
@@ -91,5 +93,18 @@
 
   .glass-panel {
     @apply bg-black/40 backdrop-blur-md border border-white/10;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  @keyframes vortex {
+    from {
+      transform: rotateY(0deg) rotateX(-5deg);
+    }
+    to {
+      transform: rotateY(360deg) rotateX(-5deg);
+    }
   }
 }

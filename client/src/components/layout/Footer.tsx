@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="py-12 px-6 md:px-12 bg-black border-t border-white/10 text-white">
+    <footer id="contacts" className="py-12 px-6 md:px-12 bg-black border-t border-white/10 text-white">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex flex-col items-center md:items-start gap-2">
           <h2 className="text-2xl font-display font-bold tracking-tight uppercase">Point Of View</h2>
