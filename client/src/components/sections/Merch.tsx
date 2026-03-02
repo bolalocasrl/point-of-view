@@ -56,11 +56,10 @@ export default function Merch() {
               >
                 <div className="w-full h-full bg-[#0a0a0a] border border-white/10 p-4 flex flex-col transition-all duration-500 md:group-hover:scale-110 group-[.active]:scale-110 md:group-hover:border-white/40 group-[.active]:border-white/40 cursor-pointer">
                   <div className="flex-1 bg-white/5 relative overflow-hidden mb-4">
-                    {/* Placeholder for merch image */}
                     <img 
                       src={product.image} 
                       alt={product.name}
-                      className="w-full h-full object-cover opacity-60 md:group-hover:opacity-100 group-[.active]:opacity-100 transition-opacity duration-300 grayscale md:group-hover:grayscale-0 group-[.active]:grayscale-0"
+                      className="w-full h-full object-cover opacity-80 md:group-hover:opacity-100 group-[.active]:opacity-100 transition-all duration-300 saturate-50 md:group-hover:saturate-100 group-[.active]:saturate-100"
                     />
                   </div>
                   <div className="flex justify-between items-end">
