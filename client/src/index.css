@@ -99,6 +99,25 @@
     transform-style: preserve-3d;
   }
 
+  /* Eye shape styling for Social Hub elements */
+  div[style*="url(#eye-mask)"],
+  video[style*="url(#eye-mask)"] {
+    clip-path: polygon(
+      0% 50%, 
+      10% 25%, 
+      25% 10%, 
+      50% 0%, 
+      75% 10%, 
+      90% 25%, 
+      100% 50%, 
+      90% 75%, 
+      75% 90%, 
+      50% 100%, 
+      25% 90%, 
+      10% 75%
+    ) !important;
+  }
+
   @keyframes vortex {
     from {
       transform: rotateY(0deg) rotateX(-5deg);
