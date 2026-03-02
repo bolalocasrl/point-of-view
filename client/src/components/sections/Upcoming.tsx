@@ -4,19 +4,11 @@ import { motion, AnimatePresence } from "framer-motion";
 const upcomingEvents = [
   {
     id: 1,
-    date: "29 March – Barcelona",
+    city: "Barcelona",
+    date: "March 21",
+    venue: "Secret Location",
+    lineup: "Guest DJ & Performance",
     image: "/assets/calbi.jpg",
-    ticketOptions: [
-      { name: "Resident Advisor", url: "#" },
-      { name: "Xceed", url: "#" },
-      { name: "Shotgun", url: "#" },
-      { name: "Dice", url: "#" }
-    ]
-  },
-  {
-    id: 2,
-    date: "10 April – Lisbon",
-    image: "/assets/forum.jpg",
     ticketOptions: [
       { name: "Resident Advisor", url: "#" },
       { name: "Xceed", url: "#" },
@@ -90,22 +82,33 @@ export default function Upcoming() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 gap-12">
           {upcomingEvents.map((event, index) => (
-            <div key={event.id} className="group relative flex flex-col gap-6">
-              <div className="aspect-[3/4] md:aspect-[4/5] overflow-hidden w-full relative bg-white/5">
+            <div key={event.id} className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+              <div className="aspect-[3/4] md:aspect-[4/5] overflow-hidden w-full relative bg-white/5 order-2 md:order-1">
                  <img
                   src={event.image}
-                  alt={`Event in ${event.date}`}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  alt={`Event in ${event.city}`}
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
               </div>
               
-              <div className="flex flex-col items-start gap-4">
-                <h3 className="text-2xl font-display uppercase font-medium">
-                  {event.date}
-                </h3>
-                <TicketDropdown options={event.ticketOptions} />
+              <div className="flex flex-col items-start gap-8 order-1 md:order-2">
+                <div className="flex flex-col gap-2 border-l border-white/20 pl-6 py-2">
+                  <p className="text-sm text-white/50 uppercase tracking-widest font-bold mb-2">Next Stop</p>
+                  <h3 className="text-5xl md:text-6xl font-display uppercase font-bold tracking-tight">
+                    {event.city}
+                  </h3>
+                  <div className="text-xl font-body text-white/80 mt-4 space-y-2">
+                    <p><span className="text-white/40">Date:</span> {event.date}</p>
+                    <p><span className="text-white/40">Venue:</span> {event.venue}</p>
+                    <p><span className="text-white/40">Line-up:</span> {event.lineup}</p>
+                  </div>
+                </div>
+                
+                <div className="mt-4">
+                  <TicketDropdown options={event.ticketOptions} />
+                </div>
               </div>
             </div>
           ))}
