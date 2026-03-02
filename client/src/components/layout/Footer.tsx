@@ -1,16 +1,14 @@
-import { motion } from "framer-motion";
+import { Instagram, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer id="contacts" className="relative bg-black border-t border-white/10 text-white overflow-hidden">
       {/* Creative Logo Background / Watermark */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none w-[150vw] md:w-[80vw] max-w-[1200px] aspect-square flex items-center justify-center">
-        <motion.img 
+      <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none z-0">
+        <img 
           src="/assets/logo-v2.png" 
           alt="" 
-          className="w-full h-full object-contain mix-blend-screen filter grayscale"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
+          className="w-[150vw] md:w-[80vw] max-w-[1200px] aspect-square object-contain mix-blend-screen filter grayscale"
         />
       </div>
 
@@ -19,23 +17,29 @@ export default function Footer() {
           (05) Connection
         </span>
         
-        <a 
-          href="https://www.instagram.com/pointofview.events/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="group block mb-12"
-        >
-          <h2 className="text-5xl md:text-8xl lg:text-9xl font-display font-black uppercase tracking-tighter leading-none hover:text-transparent hover:text-stroke transition-all duration-500">
-            Follow<br />The Vision
-          </h2>
-        </a>
+        <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-12 text-white">
+          Follow The Vision
+        </h2>
 
-        <a 
-          href="mailto:pointofview.milan@gmail.com"
-          className="text-lg md:text-xl font-body text-white/60 hover:text-white transition-colors border-b border-white/20 hover:border-white pb-1"
-        >
-          pointofview.milan@gmail.com
-        </a>
+        <div className="flex flex-col items-center gap-6">
+          <a 
+            href="https://www.instagram.com/pointofview.events/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 px-8 py-4 border border-white rounded-full hover:bg-white hover:text-black transition-all duration-300 uppercase text-sm tracking-widest font-bold bg-transparent"
+          >
+            <Instagram size={18} />
+            Follow Us
+          </a>
+
+          <a 
+            href="mailto:pointofview.milan@gmail.com"
+            className="flex items-center gap-2 px-4 py-2 text-white/50 hover:text-white transition-colors duration-300 uppercase text-xs tracking-widest font-medium"
+          >
+            <Mail size={14} />
+            pointofview.milan@gmail.com
+          </a>
+        </div>
       </div>
 
       <div className="relative z-10 border-t border-white/10 py-8 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4 bg-black/50 backdrop-blur-sm">
