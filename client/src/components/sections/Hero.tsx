@@ -144,7 +144,7 @@ export default function Hero() {
           className="relative w-[90vw] md:w-[80vw] max-w-[1600px] aspect-[16/9] flex items-center justify-center"
         >
           <model-viewer
-            src="/assets/POV-DANGELO.glb"
+            src="/POV-DANGELO.glb"
             alt="POINT OF VIEW 3D Logo"
             auto-rotate
             rotation-per-second="30deg"
