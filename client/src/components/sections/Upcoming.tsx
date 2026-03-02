@@ -93,20 +93,20 @@ export default function Upcoming() {
                 />
               </div>
               
-              <div className="flex flex-col items-start gap-8 order-1 md:order-2">
-                <div className="flex flex-col gap-2 border-l border-white/20 pl-6 py-2">
-                  <p className="text-sm text-white/50 uppercase tracking-widest font-bold mb-2">Next Stop</p>
-                  <h3 className="text-5xl md:text-6xl font-display uppercase font-bold tracking-tight">
+              <div className="flex flex-col items-start gap-6 md:gap-8 order-1 md:order-2 w-full max-w-full">
+                <div className="flex flex-col gap-2 border-l border-white/20 pl-4 md:pl-6 py-2 w-full">
+                  <p className="text-sm text-white/50 uppercase tracking-widest font-bold mb-1 md:mb-2">Next Stop</p>
+                  <h3 className="text-4xl md:text-6xl font-display uppercase font-bold tracking-tight break-words">
                     {event.city}
                   </h3>
-                  <div className="text-xl font-body text-white/80 mt-4 space-y-2">
+                  <div className="text-base md:text-xl font-body text-white/80 mt-4 space-y-2">
                     <p><span className="text-white/40">Date:</span> {event.date}</p>
                     <p><span className="text-white/40">Venue:</span> {event.venue}</p>
                     <p><span className="text-white/40">Line-up:</span> {event.lineup}</p>
                   </div>
                 </div>
                 
-                <div className="mt-4">
+                <div className="mt-2 md:mt-4 w-full">
                   <TicketDropdown options={event.ticketOptions} />
                 </div>
               </div>
