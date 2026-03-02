@@ -99,23 +99,29 @@
     transform-style: preserve-3d;
   }
 
-  /* Eye shape styling for Social Hub elements */
-  div[style*="url(#eye-mask)"],
-  video[style*="url(#eye-mask)"] {
+  .eye-shape {
     clip-path: polygon(
-      0% 50%, 
-      10% 25%, 
-      25% 10%, 
-      50% 0%, 
-      75% 10%, 
-      90% 25%, 
-      100% 50%, 
-      90% 75%, 
-      75% 90%, 
-      50% 100%, 
-      25% 90%, 
-      10% 75%
-    ) !important;
+      0% 50%,
+      2% 40%,
+      8% 28%,
+      18% 17%,
+      32% 8%,
+      50% 0%,
+      68% 8%,
+      82% 17%,
+      92% 28%,
+      98% 40%,
+      100% 50%,
+      98% 60%,
+      92% 72%,
+      82% 83%,
+      68% 92%,
+      50% 100%,
+      32% 92%,
+      18% 83%,
+      8% 72%,
+      2% 60%
+    );
   }
 
   @keyframes vortex {
