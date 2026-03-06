@@ -141,16 +141,21 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-[90vw] md:w-[80vw] max-w-[1600px] aspect-[16/9] flex items-center justify-center"
+          className="relative w-[90vw] md:w-[80vw] max-w-[120px] md:max-w-[1600px] aspect-[16/9] flex items-center justify-center mx-auto"
         >
           <model-viewer
-            src="/POV-DANGELO.glb?v=3"
+            src="/logopovattina.glb?v=1"
             alt="POINT OF VIEW 3D Logo"
             auto-rotate
             auto-rotate-delay="0"
             rotation-per-second="10deg"
             shadow-intensity="1"
             exposure="1.2"
+            environment-image="neutral"
+            disable-zoom
+            disable-pan
+            disable-tap
+            camera-controls="false"
             interaction-prompt="none"
             style={{ width: '100%', height: '100%', background: 'transparent' }}
           ></model-viewer>
