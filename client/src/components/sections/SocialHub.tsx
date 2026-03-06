@@ -1,9 +1,30 @@
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 export default function SocialHub() {
   const boloRef = useRef<HTMLVideoElement>(null);
   const bcnRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target as HTMLVideoElement;
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (boloRef.current) observer.observe(boloRef.current);
+    if (bcnRef.current) observer.observe(bcnRef.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   const boloSrc = "/assets/tshbo_new.mp4";
   const bcnSrc = "/assets/tshbcn_new.mp4";
@@ -45,10 +66,10 @@ export default function SocialHub() {
                 <video 
                   ref={boloRef}
                   src={boloSrc}
+                  preload="none"
                   muted
                   loop
                   playsInline
-                  autoPlay
                   className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 eye-shape"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />
@@ -82,10 +103,10 @@ export default function SocialHub() {
                 <video 
                   ref={bcnRef}
                   src={bcnSrc}
+                  preload="none"
                   muted
                   loop
                   playsInline
-                  autoPlay
                   className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 eye-shape"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />

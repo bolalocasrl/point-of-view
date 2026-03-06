@@ -41,6 +41,28 @@ function VideoCard({ event, index, isActive, onToggle }: { event: typeof events[
     }
   }, [isActive]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target as HTMLVideoElement;
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleMouseEnter = () => {
     if (window.matchMedia('(hover: hover)').matches && videoRef.current) {
       videoRef.current.muted = false;
@@ -71,7 +93,7 @@ function VideoCard({ event, index, isActive, onToggle }: { event: typeof events[
              <video 
               ref={videoRef}
               src={event.video}
-              autoPlay
+              preload="none"
               muted
               loop
               playsInline
