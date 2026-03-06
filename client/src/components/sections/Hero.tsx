@@ -1,6 +1,5 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
-import logoModelUrl from "@assets/logopovattina.glb?url";
 
 declare global {
   namespace JSX {
@@ -145,22 +144,23 @@ export default function Hero() {
           className="relative z-[100] w-[120px] md:w-[160px] h-[80px] flex items-center justify-center mx-auto"
         >
           <model-viewer
-            src={logoModelUrl}
+            src="/logopovattina.glb"
             alt="POINT OF VIEW 3D Logo"
             bounds="tight"
-            reveal="auto"
+            reveal="immediate"
+            loading="eager"
             auto-rotate
             auto-rotate-delay="0"
             rotation-per-second="10deg"
             shadow-intensity="1"
-            exposure="1.2"
+            exposure="2"
             environment-image="neutral"
             disable-zoom
             disable-pan
             disable-tap
             camera-controls="false"
             interaction-prompt="none"
-            style={{ width: '100%', height: '100%', background: 'transparent' }}
+            style={{ width: '100%', height: '100%', backgroundColor: 'transparent' }}
           ></model-viewer>
         </motion.div>
 
