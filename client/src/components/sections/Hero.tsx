@@ -142,11 +142,13 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-[90vw] md:w-[80vw] max-w-[120px] md:max-w-[1600px] aspect-[16/9] flex items-center justify-center mx-auto"
+          className="relative z-[100] w-[120px] md:w-[160px] h-[80px] flex items-center justify-center mx-auto"
         >
           <model-viewer
             src={logoModelUrl}
             alt="POINT OF VIEW 3D Logo"
+            bounds="tight"
+            reveal="auto"
             auto-rotate
             auto-rotate-delay="0"
             rotation-per-second="10deg"
