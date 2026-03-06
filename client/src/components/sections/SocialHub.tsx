@@ -76,7 +76,7 @@ export default function SocialHub() {
               </div>
             </div>
             <h3 className="text-3xl font-display font-bold uppercase mb-2">TSH Bologna</h3>
-            <p className="text-white/60 font-body uppercase tracking-widest text-sm">Past Event</p>
+            <p className="text-white/60 font-body uppercase tracking-widest text-sm">28/09/2024</p>
           </motion.div>
 
           {/* Barcelona */}
@@ -113,7 +113,7 @@ export default function SocialHub() {
               </div>
             </div>
             <h3 className="text-3xl font-display font-bold uppercase mb-2">TSH Barcelona</h3>
-            <p className="text-white/60 font-body uppercase tracking-widest text-sm">Past Event</p>
+            <p className="text-white/60 font-body uppercase tracking-widest text-sm">08/06/2024</p>
           </motion.div>
         </div>
       </div>

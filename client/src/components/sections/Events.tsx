@@ -8,7 +8,7 @@ const events = [
     title: "SENSORY OVERLOAD",
     location: "Secret Warehouse, Poblenou",
     video: "/assets/carino.mp4",
-    status: "Upcoming"
+    status: "Italy"
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const events = [
     title: "LIQUID METAL",
     location: "Input Dance Club",
     video: "/assets/forumstationam.mp4",
-    status: "Tickets Soon"
+    status: "Portugal"
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const events = [
     title: "RED SHIFT",
     location: "Razzmatazz (The Loft)",
     video: "/assets/guiporatovideo.mp4",
-    status: "Announced"
+    status: "Spain"
   }
 ];
 
