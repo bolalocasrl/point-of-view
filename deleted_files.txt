@@ -1,0 +1,51 @@
+Deleted from client/public/assets:
+- client/public/assets/archive-1.png
+- client/public/assets/archive-2.png
+- client/public/assets/archive-3.png
+- client/public/assets/archive-4.png
+- client/public/assets/archive-5.png
+- client/public/assets/archive-6.png
+- client/public/assets/event-1.png
+- client/public/assets/event-2.png
+- client/public/assets/event-3.png
+- client/public/assets/forum.jpg
+- client/public/assets/hero-logo.png
+- client/public/assets/hero-logo-white.png
+- client/public/assets/logo-brasil.png
+- client/public/assets/logo-final.png
+- client/public/assets/logo.png
+- client/public/assets/POV-DANGELO.glb
+- client/public/assets/POV-DANGELO.glb.backup
+- client/public/assets/tshbo.pdf
+- client/public/POV-DANGELO.glb
+attached_assets/image_1770501197339.png
+attached_assets/image_1770501629536.png
+attached_assets/logo_pov_white_1770501947693.png
+attached_assets/image_1770503153348.png
+attached_assets/guiborato_1770767043600.jpg
+attached_assets/inpulse_1770767043600.jpg
+attached_assets/teos_1770767043601.jpg
+attached_assets/milano_1770767043601.jpg
+attached_assets/tonnodisco_1770767043601.jpg
+attached_assets/tshbo_1770767043602.pdf
+attached_assets/tshbcn_1770767043601.jpg
+attached_assets/carino_1770768920821.mp4
+attached_assets/forumstationam_1770769002686.mp4
+attached_assets/guiporatovideo_1770769066628.mp4
+attached_assets/logopov_1770769685752.png
+attached_assets/logo_pach_pov_brasil_1770769899620.png
+attached_assets/Pasted-IMPORTANT-Do-NOT-rewrite-the-entire-project-Do-NOT-refa_1770885775252.txt
+attached_assets/calbi_1770885871109.jpg
+attached_assets/forum_1770885871109.jpg
+attached_assets/logopov_1770886691621.png
+attached_assets/guiporatovideo_Dc8YbCo3_1772441484252.mp4
+attached_assets/forum-station-copy_pb3Zktrt_1772441484252.mp4
+attached_assets/guiporatovideo_1772441512599.mp4
+attached_assets/forum_station-copy_1772441527146.mp4
+attached_assets/black-t-shirts-with-copy-space_1772464138077.jpg
+attached_assets/gnomo_1772464138077.jpg
+attached_assets/maglietta_pov_1772464138078.jpg
+attached_assets/POV_T-SHORT_MONSTER_1772464138078.jpg
+attached_assets/pov_t-shorts_1772464138078.jpg
+attached_assets/T-SHORT_DRRAWING_1772464138079.jpg
+attached_assets/soluna_1772464138078.jpg
