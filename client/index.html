@@ -31,16 +31,6 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <script>
-      // Polyfill per iframe replit
-      if (typeof navigator !== 'undefined' && !navigator.xr) {
-        navigator.xr = {
-          isSessionSupported: function() { return Promise.resolve(false); },
-          requestSession: function() { return Promise.reject(); }
-        };
-      }
-    </script>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
   </head>
   <body>
     <div id="root"></div>

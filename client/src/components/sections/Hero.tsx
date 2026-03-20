@@ -1,13 +1,8 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { useEffect, useRef } from "react";
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'model-viewer': any;
-    }
-  }
-}
+import { useEffect, useRef, Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Environment, Center } from "@react-three/drei";
+import { Model } from "./Logopovattina";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -143,17 +138,16 @@ export default function Hero() {
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           className="relative z-[100] w-full max-w-[800px] h-[50vh] md:h-[70vh] flex items-center justify-center mx-auto"
         >
-          <model-viewer
-            src="/logopovattina.glb"
-            alt="POINT OF VIEW 3D Logo"
-            auto-rotate
-            camera-controls
-            shadow-intensity="1"
-            exposure="1.2"
-            environment-image="neutral"
-            interaction-prompt="none"
-            style={{ width: '100%', height: '100%', display: 'block', background: 'transparent' }}
-          ></model-viewer>
+          <Canvas camera={{ position: [0, 0, 10], fov: 45 }} style={{ width: '100%', height: '100%', background: 'transparent' }} gl={{ antialias: true, alpha: true }}>
+            <Suspense fallback={null}>
+              <ambientLight intensity={2} />
+              <directionalLight position={[10, 10, 10]} intensity={3} />
+              <directionalLight position={[-10, -10, -10]} intensity={1.5} />
+              <Center>
+                <Model />
+              </Center>
+            </Suspense>
+          </Canvas>
         </motion.div>
 
         <motion.div
