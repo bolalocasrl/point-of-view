@@ -26,8 +26,8 @@ export default function SocialHub() {
     return () => observer.disconnect();
   }, []);
 
-  const boloSrc = "/assets/tshbo_new.mp4";
-  const bcnSrc = "/assets/tshbcn_new.mp4";
+  const boloSrc = "/assets/tshbologna.webm";
+  const bcnSrc = "/assets/tshbarcelona.webm";
 
   return (
     <section className="py-24 md:py-32 px-6 md:px-12 bg-black text-white border-t border-white/10">

@@ -7,7 +7,7 @@ const events = [
     date: "MAR 14",
     title: "SENSORY OVERLOAD",
     location: "Secret Warehouse, Poblenou",
-    video: "/assets/carino.mp4",
+    video: "/assets/bolognahousenation.webm",
     status: "Italy"
   },
   {
@@ -15,7 +15,7 @@ const events = [
     date: "APR 02",
     title: "LIQUID METAL",
     location: "Input Dance Club",
-    video: "/assets/forumstationam.mp4",
+    video: "/assets/guiporatosito.webm",
     status: "Portugal"
   },
   {
@@ -23,7 +23,7 @@ const events = [
     date: "MAY 20",
     title: "RED SHIFT",
     location: "Razzmatazz (The Loft)",
-    video: "/assets/guiporatovideo.mp4",
+    video: "/assets/forumstationsito.webm",
     status: "Spain"
   }
 ];
