@@ -20,7 +20,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes } = useGLTF('/logopovattina.glb') as GLTFResult
+  const { nodes } = useGLTF('/3DFinito.glb') as GLTFResult
   const groupRef = useRef<THREE.Group>(null)
 
   // Rotate slowly on the Y axis
@@ -34,7 +34,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   // This ensures the parent <group> rotates exactly around the center of the logo.
   // Reduced scale so it stays completely visible and isn't cut off
   return (
-    <group ref={groupRef} {...props} dispose={null} scale={0.12}>
+    <group ref={groupRef} {...props} dispose={null} scale={9}>
       <Center>
         <mesh geometry={nodes['<Path>002'].geometry} rotation={[Math.PI / 2, 0, 0]}>
            <meshStandardMaterial color="#ffffff" roughness={0.3} metalness={0.8} side={THREE.DoubleSide} />
@@ -44,4 +44,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/logopovattina.glb')
+useGLTF.preload('/3DFinito.glb')
