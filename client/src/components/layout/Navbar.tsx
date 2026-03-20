@@ -39,10 +39,8 @@ export default function Navbar() {
       }`}
     >
       {/* Logo always visible, but absolute positioned so it stays when nav translates up */}
-      <Link href="/">
-        <a className={`fixed top-4 left-6 md:left-12 block hover:opacity-70 transition-opacity z-[60]`}>
-          <img src="/assets/logo-v2.png" alt="Point Of View" className="h-16 w-auto md:h-20 rounded-full" />
-        </a>
+      <Link href="/" className={`fixed top-4 left-6 md:left-12 block hover:opacity-70 transition-opacity z-[60]`}>
+        <img src="/assets/logo-v2.png" alt="Point Of View" className="h-16 w-auto md:h-20 rounded-full" />
       </Link>
 
       <div className="flex items-center gap-6 text-sm font-medium tracking-wide uppercase font-body ml-auto">

@@ -141,26 +141,18 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-[100] w-[120px] md:w-[160px] h-[80px] flex items-center justify-center mx-auto"
+          className="relative z-[100] w-full max-w-[800px] h-[50vh] md:h-[70vh] flex items-center justify-center mx-auto"
         >
           <model-viewer
             src="/logopovattina.glb"
             alt="POINT OF VIEW 3D Logo"
-            bounds="tight"
-            reveal="immediate"
-            loading="eager"
             auto-rotate
-            auto-rotate-delay="0"
-            rotation-per-second="10deg"
+            camera-controls
             shadow-intensity="1"
-            exposure="2"
+            exposure="1.2"
             environment-image="neutral"
-            disable-zoom
-            disable-pan
-            disable-tap
-            camera-controls="false"
             interaction-prompt="none"
-            style={{ width: '100%', height: '100%', backgroundColor: 'transparent' }}
+            style={{ width: '100%', height: '100%', display: 'block', background: 'transparent' }}
           ></model-viewer>
         </motion.div>
 
