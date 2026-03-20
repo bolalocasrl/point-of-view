@@ -1,7 +1,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useEffect, useRef, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment, Center } from "@react-three/drei";
+import { OrbitControls, Environment, Center, Bounds } from "@react-three/drei";
 import { Model } from "./Logopovattina";
 
 export default function Hero() {
@@ -130,22 +130,20 @@ export default function Hero() {
           y: moveY,
           transformStyle: "preserve-3d" 
         }}
-        className="relative z-10 flex flex-col items-center justify-center"
+        className="relative z-10 flex flex-col items-center justify-center w-full"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-[100] w-full max-w-[800px] h-[50vh] md:h-[70vh] flex items-center justify-center mx-auto"
+          className="relative z-[100] w-full max-w-[800px] h-[50vh] md:h-[60vh] flex items-center justify-center mx-auto"
         >
           <Canvas camera={{ position: [0, 0, 10], fov: 45 }} style={{ width: '100%', height: '100%', background: 'transparent' }} gl={{ antialias: true, alpha: true }}>
             <Suspense fallback={null}>
               <ambientLight intensity={2} />
               <directionalLight position={[10, 10, 10]} intensity={3} />
               <directionalLight position={[-10, -10, -10]} intensity={1.5} />
-              <Center>
-                <Model />
-              </Center>
+              <Model />
             </Suspense>
           </Canvas>
         </motion.div>

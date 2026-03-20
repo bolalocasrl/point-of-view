@@ -6,7 +6,7 @@ Command: npx gltfjsx@6.5.3 client/public/logopovattina.glb -o client/src/compone
 import * as THREE from 'three'
 import React, { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { useGLTF } from '@react-three/drei'
+import { useGLTF, Center } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 
 type GLTFResult = GLTF & {
@@ -30,12 +30,16 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     }
   })
 
-  // We set rotation to show the logo from the front correctly
+  // We wrap the mesh in <Center> so that it centers itself perfectly at the local origin.
+  // This ensures the parent <group> rotates exactly around the center of the logo.
+  // Reduced scale so it stays completely visible and isn't cut off
   return (
-    <group ref={groupRef} {...props} dispose={null} scale={80} rotation={[Math.PI / 2, 0, 0]}>
-      <mesh geometry={nodes['<Path>002'].geometry} rotation={[0, 0, 0]}>
-         <meshStandardMaterial color="#ffffff" roughness={0.3} metalness={0.8} side={THREE.DoubleSide} />
-      </mesh>
+    <group ref={groupRef} {...props} dispose={null} scale={0.12}>
+      <Center>
+        <mesh geometry={nodes['<Path>002'].geometry} rotation={[Math.PI / 2, 0, 0]}>
+           <meshStandardMaterial color="#ffffff" roughness={0.3} metalness={0.8} side={THREE.DoubleSide} />
+        </mesh>
+      </Center>
     </group>
   )
 }
