@@ -21,8 +21,8 @@ export default function Hero() {
   const rotateY = useTransform(mouseX, [-0.5, 0.5], ["-20deg", "20deg"]);
 
   // Add subtle movement (parallax)
-  const moveX = useTransform(mouseX, [-0.5, 0.5], ["-20px", "20px"]);
-  const moveY = useTransform(mouseY, [-0.5, 0.5], ["-20px", "20px"]);
+  const moveX = useTransform(mouseX, [-0.5, 0.5], ["-10px", "10px"]);
+  const moveY = useTransform(mouseY, [-0.5, 0.5], ["-10px", "10px"]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!containerRef.current) return;

@@ -5,14 +5,14 @@ const upcomingEvents = [
   {
     id: 1,
     city: "Barcelona",
-    date: "March 21",
-    venue: "Secret Location",
-    lineup: "Guest DJ & Performance",
+    date: "April 5",
+    venue: "Poblenou",
+    lineup: "Nesi, Matale, E.DUE.S, Sr. Vinegar",
     image: "/assets/calbi.jpg",
     ticketOptions: [
-      { name: "Resident Advisor", url: "#" },
+      { name: "Resident Advisor", url: "https://it.ra.co/events/2394961" },
       { name: "Xceed", url: "#" },
-      { name: "Shotgun", url: "#" },
+      { name: "Shotgun", url: "https://shotgun.live/en/events/point-of-view-resurrection-night" },
       { name: "Dice", url: "#" }
     ]
   }
@@ -52,14 +52,9 @@ function TicketDropdown({ options }: { options: { name: string; url: string }[] 
           >
             <ul className="py-2">
               {options.map((option, idx) => (
-                <li key={idx}>
-                  <a
-                    href={option.url}
-                    className="block px-4 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white transition-colors"
-                  >
-                    {option.name}
-                  </a>
-                </li>
+            <li key={idx}>
+              <a href={option.url} target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white transition-colors">{option.name}</a>
+            </li>
               ))}
             </ul>
           </motion.div>
@@ -81,18 +76,10 @@ export default function Upcoming() {
             Upcoming Events
           </h2>
         </div>
-
         <div className="grid grid-cols-1 gap-12">
           {upcomingEvents.map((event, index) => (
             <div key={event.id} className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
-              <div className="aspect-[3/4] md:aspect-[4/5] overflow-hidden w-full relative bg-white/5 order-2 md:order-1">
-                 <img
-                  src={event.image}
-                  alt={`Event in ${event.city}`}
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-              
+
               <div className="flex flex-col items-start gap-6 md:gap-8 order-1 md:order-2 w-full max-w-full">
                 <div className="flex flex-col gap-2 border-l border-white/20 pl-4 md:pl-6 py-2 w-full">
                   <p className="text-sm text-white/50 uppercase tracking-widest font-bold mb-1 md:mb-2">Next Stop</p>
@@ -101,15 +88,28 @@ export default function Upcoming() {
                   </h3>
                   <div className="text-base md:text-xl font-body text-white/80 mt-4 space-y-2">
                     <p><span className="text-white/40">Date:</span> {event.date}</p>
-                    <p><span className="text-white/40">Venue:</span> {event.venue}</p>
+                    <p><span className="text-white/40">Location:</span> {event.venue}</p>
                     <p><span className="text-white/40">Line-up:</span> {event.lineup}</p>
                   </div>
                 </div>
-                
-                <div className="mt-2 md:mt-4 w-full">
+                <div className="mt-2 md:mt-4 w-full hidden md:block">
                   <TicketDropdown options={event.ticketOptions} />
                 </div>
               </div>
+
+              <div className="flex flex-col gap-4 order-2 md:order-1">
+                <div className="aspect-[3/4] md:aspect-[4/5] overflow-hidden w-full relative bg-white/5">
+                  <img
+                    src={event.image}
+                    alt={`Event in ${event.city}`}
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <div className="mt-2 md:hidden">
+                  <TicketDropdown options={event.ticketOptions} />
+                </div>
+              </div>
+
             </div>
           ))}
         </div>

@@ -3,12 +3,11 @@ import { useState, useEffect } from "react";
 
 const products = [
   { id: 1, name: "POV SIGNATURE TEE", price: "€35", image: "/merch/black-t-shirts.jpg" },
-  { id: 2, name: "MONSTER TEE", price: "€35", image: "/merch/POV_T-SHORT_MONSTER.jpg" },
+  { id: 2, name: "BCN STYLE", price: "€35", image: "/merch/POV_T-SHORT_MONSTER.jpg" },
   { id: 3, name: "SOLUNA TEE", price: "€35", image: "/merch/soluna.jpg" },
   { id: 4, name: "DRAWING TEE", price: "€35", image: "/merch/T-SHORT_DRRAWING.jpg" },
-  { id: 5, name: "GNOMO TEE", price: "€35", image: "/merch/gnomo.jpg" },
-  { id: 6, name: "VISION TEE", price: "€35", image: "/merch/maglietta_pov.jpg" },
-  { id: 7, name: "CLASSIC TEE", price: "€35", image: "/merch/pov_t-shorts.jpg" },
+  { id: 5, name: "BOLO BY NIGHT", price: "€35", image: "/merch/gnomo.jpg" },
+  { id: 6, name: "HEADQUARTER, LISBOA", price: "€35", image: "/merch/maglietta_pov.jpg" },
 ];
 
 export default function Merch() {
@@ -37,16 +36,18 @@ export default function Merch() {
       </div>
 
       {/* 3D Vortex Carousel */}
-      <div className="relative h-[450px] md:h-[600px] w-full flex items-center justify-center perspective-[1200px] mt-0 md:mt-10 overflow-hidden">
-        <div className="relative w-full max-w-[260px] md:max-w-[300px] h-[350px] md:h-[400px] transform-style-3d animate-vortex">
+      <div className="relative h-[380px] md:h-[600px] w-full flex items-center justify-center perspective-[1200px] mt-0 md:mt-10 overflow-visible">
+        <div className="relative w-full max-w-[260px] md:max-w-[300px] h-[280px] md:h-[400px] transform-style-3d animate-vortex">
           {products.map((product, i) => {
             const angle = (i * 360) / products.length;
+            const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+            const translateZ = isMobile ? 200 : 350;
             return (
               <div
                 key={product.id}
                 className={`absolute top-0 left-0 w-full h-full origin-center group ${activeProduct === product.id ? 'active' : ''}`}
                 style={{
-                  transform: `rotateY(${angle}deg) translateZ(350px)`,
+                  transform: `rotateY(${angle}deg) translateZ(${translateZ}px)`,
                   backfaceVisibility: 'hidden'
                 }}
                 onClick={(e) => {

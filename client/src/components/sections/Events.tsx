@@ -4,25 +4,25 @@ import { useRef, useState, useEffect } from "react";
 const events = [
   {
     id: 1,
-    date: "MAR 14",
-    title: "SENSORY OVERLOAD",
-    location: "Secret Warehouse, Poblenou",
+    date: "FEB 2025",
+    title: "HOUSE NATION",
+    location: "Bologna",
     video: "/assets/bolognahousenation.webm",
     status: "Italy"
   },
   {
     id: 2,
-    date: "APR 02",
-    title: "LIQUID METAL",
-    location: "Input Dance Club",
+    date: "JUL 2025",
+    title: "CAPARICA",
+    location: "Lisbon",
     video: "/assets/guiporatosito.webm",
     status: "Portugal"
   },
   {
     id: 3,
-    date: "MAY 20",
-    title: "RED SHIFT",
-    location: "Razzmatazz (The Loft)",
+    date: "NOV 2025",
+    title: "FORUM STATION",
+    location: "Barcelona",
     video: "/assets/forumstationsito.webm",
     status: "Spain"
   }
