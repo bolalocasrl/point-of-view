@@ -16,7 +16,7 @@ export default function Footer() {
           (05) Connection
         </span>
         
-        <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-12 text-white">Never lose your p.o.v.</h2>
+        <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-12 text-white">Follow the vision</h2>
 
         <div className="flex flex-col items-center gap-6">
           <a 
