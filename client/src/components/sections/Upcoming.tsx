@@ -8,7 +8,7 @@ const upcomingEvents = [
     date: "April 5",
     venue: "Poblenou",
     lineup: "Nesi, Matale, E.DUE.S, Sr. Vinegar",
-    image: "/assets/calbi.jpg",
+    image: "/assets/flyersito.jpeg",
     ticketOptions: [
       { name: "Resident Advisor", url: "https://it.ra.co/events/2394961" },
       { name: "Xceed", url: "#" },

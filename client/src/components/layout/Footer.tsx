@@ -3,13 +3,17 @@ import { Instagram, Mail } from "lucide-react";
 export default function Footer() {
   return (
     <footer id="contacts" className="relative bg-black border-t border-white/10 text-white overflow-hidden">
-      {/* Creative Logo Background / Watermark */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none z-0">
-        <img 
-          src="/assets/logo-v2.png" 
-          alt="" 
-          className="w-[150vw] md:w-[80vw] max-w-[1200px] aspect-square object-contain mix-blend-screen filter grayscale"
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video 
+          src="/assets/loopsito.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-30"
         />
+        <div className="absolute inset-0 bg-black/60" /> {/* Overlay for text readability */}
       </div>
       <div className="relative z-10 py-32 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center text-center">
         <span className="block text-xs font-bold uppercase tracking-widest text-white/50 mb-8">

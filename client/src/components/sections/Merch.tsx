@@ -30,9 +30,9 @@ export default function Merch() {
             POV Merch
           </h2>
         </div>
-        <button className="hidden md:block mt-8 md:mt-0 px-8 py-4 bg-white text-black rounded-full hover:bg-white/90 transition-all duration-300 uppercase text-xs tracking-widest font-black shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+        <a href="https://point-of-view-txk-shop.fourthwall.com/" target="_blank" rel="noopener noreferrer" className="hidden md:block mt-8 md:mt-0 px-8 py-4 bg-white text-black rounded-full hover:bg-white/90 transition-all duration-300 uppercase text-xs tracking-widest font-black shadow-[0_0_20px_rgba(255,255,255,0.3)]">
           Visit E-Commerce
-        </button>
+        </a>
       </div>
 
       {/* 3D Vortex Carousel */}
@@ -76,9 +76,9 @@ export default function Merch() {
 
       {/* Mobile CTA */}
       <div className="flex md:hidden justify-center px-6 mt-12 mb-8 relative z-10">
-        <button className="w-full max-w-sm px-8 py-4 bg-white text-black rounded-full hover:bg-white/90 transition-all duration-300 uppercase text-xs tracking-widest font-black shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+        <a href="https://point-of-view-txk-shop.fourthwall.com/" target="_blank" rel="noopener noreferrer" className="w-full max-w-sm px-8 py-4 bg-white text-black rounded-full hover:bg-white/90 transition-all duration-300 uppercase text-xs tracking-widest font-black shadow-[0_0_20px_rgba(255,255,255,0.3)]">
           Visit E-Commerce
-        </button>
+        </a>
       </div>
     </section>
   );
