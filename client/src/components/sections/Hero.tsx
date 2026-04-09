@@ -12,8 +12,8 @@ export default function Hero() {
   const y = useMotionValue(0);
 
   // Smooth spring physics for the tilt
-  const mouseX = useSpring(x, { stiffness: 150, damping: 15 });
-  const mouseY = useSpring(y, { stiffness: 150, damping: 15 });
+  const mouseX = useSpring(x, { stiffness: 80, damping: 20 });
+  const mouseY = useSpring(y, { stiffness: 80, damping: 20 });
 
   // Transform mouse position to rotation degrees
   // Range: -20 to 20 degrees tilt
@@ -21,8 +21,8 @@ export default function Hero() {
   const rotateY = useTransform(mouseX, [-0.5, 0.5], ["-20deg", "20deg"]);
 
   // Add subtle movement (parallax)
-  const moveX = useTransform(mouseX, [-0.5, 0.5], ["-10px", "10px"]);
-  const moveY = useTransform(mouseY, [-0.5, 0.5], ["-10px", "10px"]);
+  const moveX = useTransform(mouseX, [-0.5, 0.5], ["-5px", "5px"]);
+  const moveY = useTransform(mouseY, [-0.5, 0.5], ["-5px", "5px"]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!containerRef.current) return;

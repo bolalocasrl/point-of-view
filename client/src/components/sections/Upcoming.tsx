@@ -5,7 +5,7 @@ const upcomingEvents = [
   {
     id: 1,
     city: "Barcelona",
-    date: "April 5",
+    date: "TBA",
     venue: "Poblenou",
     lineup: "Nesi, Matale, E.DUE.S, Sr. Vinegar",
     image: "/assets/flyersito.jpeg",
@@ -21,6 +21,9 @@ const upcomingEvents = [
 function TicketDropdown({ options }: { options: { name: string; url: string }[] }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const validOptions = options.filter(option => option.url && option.url !== "#");
+
+  if (validOptions.length === 0) return null;
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -51,7 +54,7 @@ function TicketDropdown({ options }: { options: { name: string; url: string }[] 
             className="absolute top-full left-0 mt-2 w-48 bg-black border border-white/20 z-50 shadow-xl"
           >
             <ul className="py-2">
-              {options.map((option, idx) => (
+              {validOptions.map((option, idx) => (
             <li key={idx}>
               <a href={option.url} target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white transition-colors">{option.name}</a>
             </li>

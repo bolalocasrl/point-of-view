@@ -6,23 +6,21 @@ export default function Footer() {
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video 
-          src="/assets/loopsito.mp4"
+          src="/assets/loopsitofinale.mp4"
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/60" /> {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-black/40 z-10" /> {/* Overlay for text readability */}
       </div>
-      <div className="relative z-10 py-32 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center text-center">
+      <div className="relative z-20 py-32 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center text-center">
         <span className="block text-xs font-bold uppercase tracking-widest text-white/50 mb-8">
-          (05) Connection
+          Connection
         </span>
         
-        <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-12 text-white">Follow the vision</h2>
-
-        <div className="flex flex-col items-center gap-6">
+        <div className="flex flex-col items-center gap-6 mt-4">
           <a 
             href="https://www.instagram.com/pointofview.events/" 
             target="_blank" 
