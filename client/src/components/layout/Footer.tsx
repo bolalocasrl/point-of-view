@@ -13,14 +13,15 @@ export default function Footer() {
           playsInline
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40 z-10" /> {/* Overlay for text readability */}
-      </div>
-      <div className="relative z-20 py-32 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center text-center">
+        <div className="absolute inset-0 bg-black/70" /> {/* Overlay for text readability */}
+        </div>
+      <div className="relative z-10 py-32 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center text-center">
         <span className="block text-xs font-bold uppercase tracking-widest text-white/50 mb-8">
           Connection
         </span>
         
-        <div className="flex flex-col items-center gap-6 mt-4">
+
+        <div className="flex flex-col items-center gap-6">
           <a 
             href="https://www.instagram.com/pointofview.events/" 
             target="_blank" 
@@ -30,14 +31,7 @@ export default function Footer() {
             <Instagram size={18} />
             Follow Us
           </a>
-
-          <a 
-            href="mailto:pointofview.milan@gmail.com"
-            className="flex items-center gap-2 px-4 py-2 text-white/50 hover:text-white transition-colors duration-300 uppercase text-xs tracking-widest font-medium"
-          >
-            <Mail size={14} />
-            pointofview.milan@gmail.com
-          </a>
+          
         </div>
       </div>
       <div className="relative z-10 border-t border-white/10 py-8 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4 bg-black/50 backdrop-blur-sm">
