@@ -1,4 +1,4 @@
-import { Instagram, Mail } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -6,20 +6,23 @@ export default function Footer() {
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video 
-          src="/assets/loopsitofinale.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          preload="auto"
           className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/70" /> {/* Overlay for text readability */}
-        </div>
+        >
+          <source src="/assets/loopsitofinale.mp4" type="video/mp4" />
+        </video>
+        {/* Overlay nero al 40% */}
+        <div className="absolute inset-0 bg-black/40" /> 
+      </div>
+
       <div className="relative z-10 py-32 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center text-center">
         <span className="block text-xs font-bold uppercase tracking-widest text-white/50 mb-8">
           Connection
         </span>
-        
 
         <div className="flex flex-col items-center gap-6">
           <a 
@@ -31,9 +34,15 @@ export default function Footer() {
             <Instagram size={18} />
             Follow Us
           </a>
-          
+          <a 
+            href="mailto:POINTOFVIEW.MILAN@GMAIL.COM" 
+            className="text-xs tracking-widest text-white/60 hover:text-white transition-colors"
+          >
+            POINTOFVIEW.MILAN@GMAIL.COM
+          </a>
         </div>
       </div>
+
       <div className="relative z-10 border-t border-white/10 py-8 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4 bg-black/50 backdrop-blur-sm">
         <div className="flex items-center gap-2">
           <span className="text-xl font-display font-bold tracking-tight uppercase">POV</span>
