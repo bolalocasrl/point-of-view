@@ -11,7 +11,6 @@ export default function Footer() {
           muted 
           playsInline 
           preload="auto"
-          onCanPlay={(e) => (e.currentTarget.muted = true)}
           className="w-full h-full object-cover"
         >
           <source src="/assets/loopsitofinale.mp4" type="video/mp4" />
