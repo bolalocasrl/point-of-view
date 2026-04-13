@@ -41,7 +41,7 @@ export default function Merch() {
           {products.map((product, i) => {
             const angle = (i * 360) / products.length;
             const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-            const translateZ = isMobile ? 150 : 350;
+            const translateZ = isMobile ? 280 : 350;
             return (
               <div
                 key={product.id}
