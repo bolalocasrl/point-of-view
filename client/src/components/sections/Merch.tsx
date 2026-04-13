@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 
   const products = [
     { id: 1, name: "POV SIGNATURE TEE", price: "€35", image: "/merch/black-t-shirts.jpg" },
-    { id: 2, name: "BCN STYLE", price: "€35", image: "/merch/soluna.jpg" }, 
+    { id: 2, name: "BCN STYLE", price: "€35", image: "/merch/POV_T-SHORT_MONSTER.jpg" }, 
     { id: 3, name: "SOLUNA TEE", price: "€35", image: "/merch/soluna.jpg" },
     { id: 4, name: "DRAWING TEE", price: "€35", image: "/merch/T-SHORT_DRRAWING.jpg" }, 
-    { id: 5, name: "BOLO BY NIGHT", price: "€35", image: "/merch/soluna.jpg" },
+    { id: 5, name: "BOLO BY NIGHT", price: "€35", image: "/merch/gnomo.jpg" },
     { id: 6, name: "HEADQUARTER, LISBOA", price: "€35", image: "/merch/maglietta_pov.jpg" },
   ];;
 
