@@ -1,45 +1,36 @@
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 import { useEffect, useRef, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Model } from "./Logopovattina";
 
+const SPRING = { type: "spring", stiffness: 80, damping: 20 } as const;
+
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Raw mouse position — only ever written by event handlers, so they start at exactly 0
+  // Raw MotionValues — start at exactly 0 and are only written by event handlers.
+  // No spring sits between these and the transforms, so there is no first-frame
+  // initialisation race. Smoothing is handled imperatively via animate() below.
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  // Guarantee zero at mount before any animation frame runs.
-  // useSpring can carry stale internal physics state across Strict Mode remounts;
-  // this flush prevents a non-zero initial transform.
-  useEffect(() => {
-    x.set(0);
-    y.set(0);
-  }, [x, y]);
-
-  // Springs for smooth ROTATION only — these drive tilt, not position
-  const springX = useSpring(x, { stiffness: 80, damping: 20, restDelta: 0.001 });
-  const springY = useSpring(y, { stiffness: 80, damping: 20, restDelta: 0.001 });
-
-  const rotateX = useTransform(springY, [-0.5, 0.5], ["20deg", "-20deg"]);
-  const rotateY = useTransform(springX, [-0.5, 0.5], ["-20deg", "20deg"]);
-
-  // Parallax translation derived from RAW x/y — never spring-driven, so always exactly 0
-  // at mount. Only non-zero after the first mousemove/orientation event.
-  const moveX = useTransform(x, [-0.5, 0.5], [-5, 5]);
-  const moveY = useTransform(y, [-0.5, 0.5], [-5, 5]);
+  // All four transforms read directly from x/y.
+  // When x === 0 and y === 0 (i.e. before any interaction), every transform is 0.
+  const rotateX = useTransform(y, [-0.5, 0.5], ["20deg", "-20deg"]);
+  const rotateY = useTransform(x, [-0.5, 0.5], ["-20deg", "20deg"]);
+  const moveX   = useTransform(x, [-0.5, 0.5], [-5, 5]);
+  const moveY   = useTransform(y, [-0.5, 0.5], [-5, 5]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
-    x.set((e.clientX - rect.left) / rect.width - 0.5);
-    y.set((e.clientY - rect.top) / rect.height - 0.5);
+    animate(x, (e.clientX - rect.left) / rect.width - 0.5, SPRING);
+    animate(y, (e.clientY - rect.top) / rect.height - 0.5, SPRING);
   };
 
   const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
+    animate(x, 0, SPRING);
+    animate(y, 0, SPRING);
   };
 
   // Gyroscope effect for mobile
@@ -49,11 +40,11 @@ export default function Hero() {
 
       // Beta: front-to-back tilt [-180, 180]. 45° is a normal holding position.
       // Gamma: left-to-right tilt [-90, 90]
-      const yVal = Math.max(-0.5, Math.min(0.5, (e.beta - 45) / 45));
       const xVal = Math.max(-0.5, Math.min(0.5, e.gamma / 45));
+      const yVal = Math.max(-0.5, Math.min(0.5, (e.beta - 45) / 45));
 
-      x.set(xVal);
-      y.set(yVal);
+      animate(x, xVal, SPRING);
+      animate(y, yVal, SPRING);
     };
 
     const requestPermission = async () => {
