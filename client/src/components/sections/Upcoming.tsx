@@ -5,8 +5,8 @@ const upcomingEvents = [
   {
     id: 1,
     city: "Barcelona",
-    date: "TBA",
-    venue: "Poblenou",
+    date: "5 June 2025",
+    venue: "Vraba Restaurant, Port Vell, Barceloneta",
     lineup: "Nesi, Matale, E.DUE.S, Sr. Vinegar",
     image: "/assets/flyersito.jpeg",
     ticketOptions: [
@@ -23,9 +23,8 @@ function TicketDropdown({ options }: { options: { name: string; url: string }[] 
   const dropdownRef = useRef<HTMLDivElement>(null);
   const validOptions = options.filter(option => option.url && option.url !== "#");
 
-  if (validOptions.length === 0) return null;
-
   useEffect(() => {
+    if (validOptions.length === 0) return;
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
@@ -33,7 +32,9 @@ function TicketDropdown({ options }: { options: { name: string; url: string }[] 
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [validOptions.length]);
+
+  if (validOptions.length === 0) return null;
 
   return (
     <div className="relative inline-block" ref={dropdownRef}>

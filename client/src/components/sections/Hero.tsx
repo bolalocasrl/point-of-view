@@ -1,7 +1,6 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useEffect, useRef, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment, Center, Bounds } from "@react-three/drei";
 import { Model } from "./Logopovattina";
 
 export default function Hero() {
@@ -20,9 +19,9 @@ export default function Hero() {
   const rotateX = useTransform(mouseY, [-0.5, 0.5], ["20deg", "-20deg"]);
   const rotateY = useTransform(mouseX, [-0.5, 0.5], ["-20deg", "20deg"]);
 
-  // Add subtle movement (parallax)
-  const moveX = useTransform(mouseX, [-0.5, 0.5], ["-5px", "5px"]);
-  const moveY = useTransform(mouseY, [-0.5, 0.5], ["-5px", "5px"]);
+  // Add subtle movement (parallax) — numeric values ensure exact 0 at center on first render
+  const moveX = useTransform(mouseX, [-0.5, 0.5], [-5, 5]);
+  const moveY = useTransform(mouseY, [-0.5, 0.5], [-5, 5]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!containerRef.current) return;
@@ -136,7 +135,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-[100] w-full max-w-[800px] h-[50vh] md:h-[60vh] flex items-center justify-center mx-auto"
+          className="relative z-[100] w-full max-w-[900px] h-[60vh] md:h-[70vh] flex items-center justify-center mx-auto"
         >
           <Canvas camera={{ position: [0, 0, 10], fov: 45 }} style={{ width: '100%', height: '100%', background: 'transparent' }} gl={{ antialias: true, alpha: true }}>
             <Suspense fallback={null}>
