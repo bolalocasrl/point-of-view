@@ -87,7 +87,6 @@ export default function Hero() {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-black"
-      style={{ perspective: 1000 }}
     >
       {/* Dynamic Background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,rgba(0,0,0,0)_70%)]" />
@@ -113,11 +112,12 @@ export default function Hero() {
           x: moveX,
           y: moveY,
           transformStyle: "preserve-3d",
+          perspective: 1000,
         }}
         className="relative z-10 flex flex-col items-center justify-center w-full"
       >
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={false}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           className="relative z-[100] w-full max-w-[900px] h-[60vh] md:h-[70vh] flex items-center justify-center mx-auto"

@@ -12,7 +12,7 @@ export default function Footer() {
           muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover"
+          className="w-full h-full min-h-full object-cover"
         >
           <source src="/assets/loopsitofinale.mp4" type="video/mp4" />
         </video>
@@ -20,7 +20,7 @@ export default function Footer() {
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
-      <div className="relative z-10 py-32 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center text-center">
+      <div className="relative z-10 py-20 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center text-center">
         <span className="block text-xs font-bold uppercase tracking-widest text-white/50 mb-8">
           Connection
         </span>

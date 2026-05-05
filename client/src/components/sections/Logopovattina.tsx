@@ -30,7 +30,7 @@ export function Model(props: ThreeElements['group']) {
   })
 
   return (
-    <group ref={groupRef} {...props} dispose={null} scale={7}>
+    <group ref={groupRef} {...props} dispose={null} scale={5}>
       <Center>
         <mesh geometry={nodes['<Path>002'].geometry} rotation={[Math.PI / 2, 0, 0]}>
           <meshStandardMaterial color="#ffffff" roughness={0.3} metalness={0.8} side={THREE.DoubleSide} />
