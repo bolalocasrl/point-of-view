@@ -5,15 +5,14 @@ const upcomingEvents = [
   {
     id: 1,
     city: "Barcelona",
-    date: "5 June 2025",
-    venue: "Vraba Restaurant, Port Vell, Barceloneta",
-    lineup: "Nesi, Matale, E.DUE.S, Sr. Vinegar",
-    image: "/assets/flyersito.jpeg",
+    date: "Friday, June 12 — 18:00 to 02:00",
+    venue: "Albura, Moll d'Espanya 8, Barcelona",
+    lineup: "Miroir, Eli Kapowski, DECOSTAT, Matale, E.DUE.S, MASSIF, Israel Roa b2b Ema Ross",
+    image: "/assets/flyeralbura.webp",
     ticketOptions: [
-      { name: "Resident Advisor", url: "https://it.ra.co/events/2394961" },
-      { name: "Xceed", url: "#" },
-      { name: "Shotgun", url: "https://shotgun.live/en/events/point-of-view-resurrection-night" },
-      { name: "Dice", url: "#" }
+      { name: "Shotgun", url: "https://shotgun.live/en/events/point-of-view-albura-summer-edition" },
+      { name: "Resident Advisor", url: "https://it.ra.co/events/2444495" },
+      { name: "Xceed", url: "https://xceed.me/en/barcelona/event/point-of-view-albura-summer-edition/231470/channel/point-of-view" }
     ]
   }
 ];
