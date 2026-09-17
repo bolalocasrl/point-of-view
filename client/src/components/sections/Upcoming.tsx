@@ -5,14 +5,16 @@ const upcomingEvents = [
   {
     id: 1,
     city: "Barcelona",
-    date: "Friday, June 12 — 18:00 to 02:00",
+    date: "Friday, October 2 — 18:00 to 02:00",
     venue: "Albura, Moll d'Espanya 8, Barcelona",
-    lineup: "Miroir, Eli Kapowski, DECOSTAT, Matale, E.DUE.S, MASSIF, Israel Roa b2b Ema Ross",
-    image: "/assets/flyeralbura.webp",
+    lineup: "Coming soon",
+    // Flyer not ready yet: leave empty to show the "coming soon" placeholder
+    image: "",
+    // Add the ticket links when they go live (entries with "#" are hidden)
     ticketOptions: [
-      { name: "Shotgun", url: "https://shotgun.live/en/events/point-of-view-albura-summer-edition" },
-      { name: "Resident Advisor", url: "https://it.ra.co/events/2444495" },
-      { name: "Xceed", url: "https://xceed.me/en/barcelona/event/point-of-view-albura-summer-edition/231470/channel/point-of-view" }
+      { name: "Shotgun", url: "#" },
+      { name: "Resident Advisor", url: "#" },
+      { name: "Xceed", url: "#" }
     ]
   }
 ];
@@ -33,7 +35,13 @@ function TicketDropdown({ options }: { options: { name: string; url: string }[] 
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [validOptions.length]);
 
-  if (validOptions.length === 0) return null;
+  if (validOptions.length === 0) {
+    return (
+      <span className="inline-block px-6 py-2 border border-white/30 text-white/50 uppercase text-xs tracking-widest font-bold">
+        Tickets coming soon
+      </span>
+    );
+  }
 
   return (
     <div className="relative inline-block" ref={dropdownRef}>
@@ -102,11 +110,21 @@ export default function Upcoming() {
 
               <div className="flex flex-col gap-4 order-2 md:order-1">
                 <div className="aspect-[3/4] md:aspect-[4/5] overflow-hidden w-full relative bg-white/5">
-                  <img
-                    src={event.image}
-                    alt={`Event in ${event.city}`}
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
+                  {event.image ? (
+                    <img
+                      src={event.image}
+                      alt={`Event in ${event.city}`}
+                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 border border-white/10 flex flex-col items-center justify-center gap-4 text-center p-8">
+                      <span className="text-xs font-bold uppercase tracking-widest text-white/40">Flyer</span>
+                      <span className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight text-transparent [-webkit-text-stroke:1px_white]">
+                        Coming<br />Soon
+                      </span>
+                      <span className="text-xs font-bold uppercase tracking-widest text-white/40">{event.city} — 02.10</span>
+                    </div>
+                  )}
                 </div>
                 <div className="mt-2 md:hidden">
                   <TicketDropdown options={event.ticketOptions} />

@@ -7,6 +7,7 @@ import Events from "@/components/sections/Events";
 import Archive from "@/components/sections/Archive";
 import SocialHub from "@/components/sections/SocialHub";
 import Merch from "@/components/sections/Merch";
+import NewsletterPopup from "@/components/NewsletterPopup";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
       </main>
       
       <Footer />
+      <NewsletterPopup />
     </div>
   );
 }

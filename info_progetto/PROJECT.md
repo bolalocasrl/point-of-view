@@ -137,7 +137,7 @@ point-of-view/
 |---|---|
 | Email | POINTOFVIEW.MILAN@GMAIL.COM |
 | Instagram | @pointofview.events |
-| Store | point-of-view-txk-shop.fourthwall.com |
+| Store | e-commercewth-shop.fourthwall.com/en-eur |
 
 ---
 

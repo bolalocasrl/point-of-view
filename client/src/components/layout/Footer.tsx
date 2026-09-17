@@ -1,4 +1,5 @@
 import { Instagram } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Footer() {
   return (
@@ -53,8 +54,8 @@ export default function Footer() {
         </div>
 
         <div className="flex gap-6">
-          <a href="#" className="text-[10px] uppercase tracking-widest text-white/40 hover:text-white transition-colors">Privacy</a>
-          <a href="#" className="text-[10px] uppercase tracking-widest text-white/40 hover:text-white transition-colors">Terms</a>
+          <Link href="/privacy" className="text-[10px] uppercase tracking-widest text-white/40 hover:text-white transition-colors">Privacy</Link>
+          <Link href="/terms" className="text-[10px] uppercase tracking-widest text-white/40 hover:text-white transition-colors">Terms</Link>
         </div>
       </div>
     </footer>
