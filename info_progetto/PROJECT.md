@@ -202,3 +202,6 @@ Se manca o l'API non risponde, la pagina usa la lista di riserva in `client/src/
 
 `client/src/components/NewsletterPopup.tsx` si apre dopo lo scroll. Con la variabile **`VITE_BREVO_FORM_URL`**
 manda le iscrizioni a Brevo; senza, apre una mail precompilata verso POV (soluzione provvisoria).
+
+> Newsletter: le iscrizioni dal sito finiscono nella lista Brevo **POV WEBSITE (#3)** tramite `api/subscribe.js`.
+> Variabili su Vercel: `BREVO_API_KEY` (protetta) e `BREVO_LIST_ID`.
