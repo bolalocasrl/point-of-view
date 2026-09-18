@@ -1,11 +1,10 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import { CONTACT_EMAIL } from "@/components/layout/LegalPage";
 
-// Brevo form URL (Brevo > Contacts > Forms > "Embed" > form action URL).
-// Set it in Vercel as VITE_BREVO_FORM_URL. Until then, signups are sent by email to POV.
-const BREVO_FORM_URL = import.meta.env.VITE_BREVO_FORM_URL as string | undefined;
+// Signups go to /api/subscribe, which adds them to the Brevo list server-side
+// (see api/subscribe.js). The Brevo key never reaches the browser.
+const SUBSCRIBE_URL = "/api/subscribe";
 
 const STORAGE_KEY = "pov-newsletter";
 const DISMISS_DAYS = 7;
@@ -78,17 +77,12 @@ export default function NewsletterPopup() {
     setStatus("sending");
 
     try {
-      if (BREVO_FORM_URL) {
-        const body = new FormData();
-        body.append("EMAIL", email);
-        body.append("email_address_check", "");
-        body.append("locale", "en");
-        await fetch(BREVO_FORM_URL, { method: "POST", body, mode: "no-cors" });
-      } else {
-        const subject = encodeURIComponent("Newsletter signup");
-        const text = encodeURIComponent(`Please add me to the POV newsletter: ${email}`);
-        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${text}`;
-      }
+      const res = await fetch(SUBSCRIBE_URL, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ email, website: "" }),
+      });
+      if (!res.ok) throw new Error(`subscribe: ${res.status}`);
       saveState("subscribed");
       setStatus("done");
     } catch {
