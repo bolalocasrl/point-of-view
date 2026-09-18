@@ -5,16 +5,15 @@ const upcomingEvents = [
   {
     id: 1,
     city: "Barcelona",
-    date: "Friday, October 2 — 18:00 to 02:00",
-    venue: "Albura, Moll d'Espanya 8, Barcelona",
-    lineup: "Coming soon",
-    // Flyer not ready yet: leave empty to show the "coming soon" placeholder
-    image: "",
-    // Add the ticket links when they go live (entries with "#" are hidden)
+    title: "ESC — End. Shift. Connect.",
+    date: "Friday, October 2 — 19:00 to 02:00",
+    venue: "Albura Rooftop, Moll d'Espanya 8, Ciutat Vella",
+    lineup: "Matale + full line-up soon",
+    blurb: "A sunset-to-night rooftop session above the port. House, deep house and tech house, four collectives, one direction: Point of View x No Alibi x Groovers Gonna Groove x Placeo.",
+    image: "/assets/flyeresc.webp",
     ticketOptions: [
-      { name: "Shotgun", url: "#" },
-      { name: "Resident Advisor", url: "#" },
-      { name: "Xceed", url: "#" }
+      { name: "Resident Advisor", url: "https://it.ra.co/events/2538024" },
+      { name: "Shotgun", url: "https://shotgun.live/en/events/esc-united-label-end-shift-conect" }
     ]
   }
 ];
@@ -97,10 +96,14 @@ export default function Upcoming() {
                   <h3 className="text-4xl md:text-6xl font-display uppercase font-bold tracking-tight break-words">
                     {event.city}
                   </h3>
+                  <p className="text-lg md:text-2xl font-display uppercase font-bold tracking-tight text-white/70 mt-1">
+                    {event.title}
+                  </p>
                   <div className="text-base md:text-xl font-body text-white/80 mt-4 space-y-2">
                     <p><span className="text-white/40">Date:</span> {event.date}</p>
                     <p><span className="text-white/40">Location:</span> {event.venue}</p>
                     <p><span className="text-white/40">Line-up:</span> {event.lineup}</p>
+                    <p className="text-sm md:text-base text-white/50 pt-2 leading-relaxed">{event.blurb}</p>
                   </div>
                 </div>
                 <div className="mt-2 md:mt-4 w-full hidden md:block">
