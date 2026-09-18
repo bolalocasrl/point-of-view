@@ -90,6 +90,9 @@ point-of-view/
 | Route | File | Descrizione |
 |---|---|---|
 | `/` | `client/src/pages/Home.tsx` | Pagina principale (landing one-page) |
+| `/shop` | `client/src/pages/Shop.tsx` | Vetrina prodotti, dati dalla Storefront API Fourthwall |
+| `/privacy` | `client/src/pages/Privacy.tsx` | Privacy policy |
+| `/terms` | `client/src/pages/Terms.tsx` | Termini d'uso |
 | `*` | `client/src/pages/not-found.tsx` | Pagina 404 custom |
 
 ---
@@ -137,7 +140,8 @@ point-of-view/
 |---|---|
 | Email | POINTOFVIEW.MILAN@GMAIL.COM |
 | Instagram | @pointofview.events |
-| Store | e-commercewth-shop.fourthwall.com/en-eur |
+| Store (nuovo) | point-of-view-tge-shop.fourthwall.com |
+| Store (vecchio, altro account) | e-commercewth-shop.fourthwall.com |
 
 ---
 
@@ -168,3 +172,33 @@ npm run db:push   # Applica schema Drizzle al DB
 - Gli stili custom più importanti sono in `client/src/index.css` (grain overlay, text-stroke, 3D utilities, vortex keyframe)
 - La build output va in `dist/public` (Vite) e `dist/server.js` (esbuild)
 - Le API sono servite su porta `5000` in dev
+
+
+---
+
+## Shop Fourthwall (nuovo account)
+
+- **URL**: https://point-of-view-tge-shop.fourthwall.com — stato *Coming soon* finché non lo apriamo.
+- **7 magliette** Bella+Canvas 3001 nere (XS–5XL): logo a rombo sul petto sinistro davanti, grafica grande dietro.
+  HEADQUARTER LISBOA 35 $; le altre sei 30 $. Fourthwall lavora in dollari e converte in euro, quindi i prezzi
+  mostrati hanno i centesimi (€26,65 / €31,09).
+- **Grafiche di stampa**: `info_progetto/e_commerce/Magliette/Grafichemagliette/pulite/` (ripulite dai segni di
+  scarto). I fogli di stampa 15"x18" a 150 dpi vengono generati da quelle.
+- **Striscia in alto** con conto alla rovescia all'evento del 2 ottobre; **sezione newsletter** in home
+  (iscritti in Settings → Email marketing).
+
+### Collegamento sito ↔ shop
+
+La pagina `/shop` legge i prodotti dalla Storefront API:
+
+```
+GET https://storefront-api.fourthwall.com/v1/collections/all/products?storefront_token=<TOKEN>&currency=EUR
+```
+
+Il token sta nella variabile d'ambiente **`VITE_FW_TOKEN`** su Vercel (produzione, preview e sviluppo).
+Se manca o l'API non risponde, la pagina usa la lista di riserva in `client/src/lib/shop.ts`.
+
+### Newsletter sul sito
+
+`client/src/components/NewsletterPopup.tsx` si apre dopo lo scroll. Con la variabile **`VITE_BREVO_FORM_URL`**
+manda le iscrizioni a Brevo; senza, apre una mail precompilata verso POV (soluzione provvisoria).
