@@ -191,6 +191,56 @@ export default function Shop() {
           )}
         </section>
 
+        {/* rewards */}
+        <section className="mx-auto mt-20 max-w-7xl border border-white/15 p-6 md:mt-28 md:p-12">
+          <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-white/50">(05) Collect</span>
+          <h2 className="font-display text-4xl font-black uppercase leading-[0.85] tracking-tighter md:text-7xl">
+            Unlock<br />
+            <span className="text-transparent [-webkit-text-stroke:1px_white]">Rewards</span>
+          </h2>
+          <p className="mt-6 max-w-xl leading-relaxed text-white/60">
+            The cards are not only cotton. Collect them and the dancefloor gives something back.
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 gap-px bg-white/10 md:grid-cols-3">
+            {[
+              {
+                n: "02",
+                title: "A drink on us",
+                text: "Two cards: your first drink is covered at any POV night.",
+              },
+              {
+                n: "05",
+                title: "Personal open bar",
+                text: "Five cards: one POV night with your bar tab on us, agreed with us in advance.",
+              },
+              {
+                n: "ALL",
+                title: "POV Tour",
+                text: "The full collection: we host you on the road for two years, wherever we can make it happen.",
+              },
+            ].map((tier) => (
+              <div key={tier.n} className="bg-black p-6 md:p-8">
+                <span className="font-display text-5xl font-black leading-none text-white/15">{tier.n}</span>
+                <h3 className="mt-4 font-display text-base font-bold uppercase tracking-tight">{tier.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/50">{tier.text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 border-t border-white/10 pt-6">
+            <h3 className="mb-3 text-[10px] uppercase tracking-[0.2em] text-white/40">How it works</h3>
+            <ul className="grid grid-cols-1 gap-2 text-sm leading-relaxed text-white/50 md:grid-cols-2">
+              <li>Keep your order confirmations — they are your proof.</li>
+              <li>Write to pointofview.milan@gmail.com before the night you want to use it.</li>
+              <li>No expiry: use it at the POV night you prefer, not necessarily the next one.</li>
+              <li>Open bar and POV Tour are agreed in advance, so we know you are coming.</li>
+              <li>Rewards are personal and cannot be resold.</li>
+              <li>POV Tour means a place to stay where we can organise it — travel is on you.</li>
+            </ul>
+          </div>
+        </section>
+
         {/* info */}
         <section className="mx-auto mt-20 grid max-w-7xl grid-cols-1 gap-8 border-t border-white/10 pt-12 md:mt-28 md:grid-cols-3">
           {[
