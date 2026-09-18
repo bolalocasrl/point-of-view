@@ -88,12 +88,15 @@ export const FALLBACK_PRODUCTS: Product[] = [
   },
 ];
 
+type Money = { value?: number; currency?: string };
+
 type ApiProduct = {
   id: string;
   name: string;
   slug: string;
   images?: { url?: string }[];
-  price?: { value?: number; currency?: string };
+  price?: Money;
+  variants?: { unitPrice?: Money }[];
   access?: { type?: string };
   state?: { type?: string };
 };
@@ -111,8 +114,9 @@ export async function fetchProducts(signal?: AbortSignal): Promise<Product[]> {
       id: p.id,
       name: p.name,
       slug: p.slug,
-      price: p.price?.value ?? 0,
-      currency: p.price?.currency ?? "EUR",
+      // some products only carry the price on their variants
+      price: p.price?.value ?? p.variants?.[0]?.unitPrice?.value ?? 0,
+      currency: p.price?.currency ?? p.variants?.[0]?.unitPrice?.currency ?? "EUR",
       image: p.images?.[1]?.url ?? p.images?.[0]?.url ?? null,
       imageAlt: p.images?.[11]?.url ?? p.images?.[0]?.url ?? null,
       url: productUrl(p.slug),

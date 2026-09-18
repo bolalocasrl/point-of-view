@@ -19,9 +19,10 @@ export default function Archive() {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-6xl font-display font-black uppercase tracking-tight mb-2"
+          className="text-5xl md:text-8xl font-display font-black uppercase leading-[0.85] tracking-tighter mb-3"
         >
-          Past Events
+          Past<br />
+          <span className="text-transparent [-webkit-text-stroke:1px_white]">Events</span>
         </motion.h2>
         <p className="text-sm md:text-base font-body uppercase tracking-[0.3em] opacity-60">
           Archives of Sound & Vision
