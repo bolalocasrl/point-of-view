@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "wouter";
 
 const products = [
   { id: 1, name: "POV SIGNATURE TEE", price: "€26", image: "/merch/black-t-shirts.jpg" },
@@ -29,9 +30,9 @@ export default function Merch() {
             POV Merch
           </h2>
         </div>
-        <a href="https://e-commercewth-shop.fourthwall.com/en-eur" target="_blank" rel="noopener noreferrer" className="hidden md:block mt-8 md:mt-0 px-8 py-4 bg-white text-black rounded-full hover:bg-white/90 transition-all duration-300 uppercase text-xs tracking-widest font-black shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-          Visit E-Commerce
-        </a>
+        <Link href="/shop" className="hidden md:block mt-8 md:mt-0 px-8 py-4 bg-white text-black rounded-full hover:bg-white/90 transition-all duration-300 uppercase text-xs tracking-widest font-black shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+          Shop Now
+        </Link>
       </div>
 
       {/* 3D Vortex Carousel */}
@@ -75,9 +76,9 @@ export default function Merch() {
 
       {/* Mobile CTA */}
       <div className="flex md:hidden justify-center px-6 mt-12 mb-8 relative z-10">
-        <a href="https://e-commercewth-shop.fourthwall.com/en-eur" target="_blank" rel="noopener noreferrer" className="inline-flex px-8 py-4 bg-white text-black rounded-full hover:bg-white/90 transition-all duration-300 uppercase text-xs tracking-widest font-black shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-          Visit E-Commerce
-        </a>
+        <Link href="/shop" className="inline-flex px-8 py-4 bg-white text-black rounded-full hover:bg-white/90 transition-all duration-300 uppercase text-xs tracking-widest font-black shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+          Shop Now
+        </Link>
       </div>
     </section>
   );
