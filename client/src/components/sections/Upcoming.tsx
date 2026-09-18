@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import SectionTitle from "@/components/SectionTitle";
 
 const upcomingEvents = [
   {
@@ -8,7 +9,7 @@ const upcomingEvents = [
     title: "ESC — End. Shift. Connect.",
     date: "Friday, October 2 — 19:00 to 02:00",
     venue: "Albura Rooftop, Moll d'Espanya 8, Ciutat Vella",
-    lineup: "Matale + full line-up soon",
+    lineup: "DAGZZ, E.DUE.S, MARCO G, Mario Chicoli, Massif, Mastro Sally, MATE, SALVIA",
     blurb: "A sunset-to-night rooftop session above the port. House, deep house and tech house, four collectives, one direction: Point of View x No Alibi x Groovers Gonna Groove x Placeo.",
     image: "/assets/flyeresc.webp",
     ticketOptions: [
@@ -82,9 +83,7 @@ export default function Upcoming() {
           <span className="block text-xs font-bold uppercase tracking-widest text-white/50 mb-2">
             (01.5) Next
           </span>
-          <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tight">
-            Upcoming Events
-          </h2>
+          <SectionTitle solid="Upcoming" outline="Events" />
         </div>
         <div className="grid grid-cols-1 gap-12">
           {upcomingEvents.map((event, index) => (

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import SectionTitle from "@/components/SectionTitle";
 
 const events = [
   {
@@ -143,9 +144,7 @@ export default function Events() {
             <span className="block text-xs font-bold uppercase tracking-widest text-white/50 mb-2">
               (02) Agenda
             </span>
-            <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tight">
-              Around Europe
-            </h2>
+            <SectionTitle solid="Around" outline="Europe" />
           </div>
         </div>
 

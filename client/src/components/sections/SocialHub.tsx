@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useRef, useEffect } from "react";
+import SectionTitle from "@/components/SectionTitle";
 
 export default function SocialHub() {
   const boloRef = useRef<HTMLVideoElement>(null);
@@ -36,9 +37,7 @@ export default function SocialHub() {
           <span className="block text-xs font-bold uppercase tracking-widest text-white/50 mb-2">
             (03) Collaborations
           </span>
-          <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tight">
-            The Social Hub <span className="text-white/30">x</span> Point of View
-          </h2>
+          <SectionTitle solid="The Social Hub" outline="x Point of View" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center max-w-5xl mx-auto">

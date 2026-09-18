@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
+import SectionTitle from "@/components/SectionTitle";
 
 const products = [
   { id: 1, name: "POV SIGNATURE TEE", price: "€26", image: "/merch/black-t-shirts.jpg" },
@@ -26,9 +27,7 @@ export default function Merch() {
           <span className="block text-xs font-bold uppercase tracking-widest text-white/50 mb-2">
             (04) Store
           </span>
-          <h2 className="text-4xl md:text-7xl font-display font-bold uppercase tracking-tight">
-            POV Merch
-          </h2>
+          <SectionTitle solid="POV" outline="Merch" />
         </div>
         <Link href="/shop" className="hidden md:block mt-8 md:mt-0 px-8 py-4 bg-white text-black rounded-full hover:bg-white/90 transition-all duration-300 uppercase text-xs tracking-widest font-black shadow-[0_0_20px_rgba(255,255,255,0.3)]">
           Shop Now

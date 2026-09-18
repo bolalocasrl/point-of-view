@@ -62,12 +62,22 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
       {/* image window */}
       <div className="relative aspect-square overflow-hidden border border-white/10 bg-[#141414]">
         {product.image ? (
-          <img
-            src={product.image}
-            alt={product.name}
-            loading="lazy"
-            className="h-full w-full object-cover brightness-110 transition-transform duration-700 group-hover:scale-105"
-          />
+          <>
+            <img
+              src={product.image}
+              alt={`${product.name} — back print`}
+              loading="lazy"
+              className="h-full w-full object-cover brightness-125 transition-all duration-700 group-hover:scale-105 group-hover:opacity-0"
+            />
+            {product.imageAlt && (
+              <img
+                src={product.imageAlt}
+                alt={`${product.name} — worn`}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full scale-105 object-cover opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+              />
+            )}
+          </>
         ) : (
           <div className="absolute inset-0 flex items-center justify-center text-xs uppercase tracking-widest text-white/30">
             POV
