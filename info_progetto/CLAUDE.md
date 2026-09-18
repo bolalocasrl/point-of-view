@@ -64,3 +64,36 @@ Supabase contiene dati reali. Prima di qualsiasi operazione sul database:
 - Ogni progetto ha la sua cartella dentro `PROGETTI/` sul mio Mac
 - Ogni progetto ha una cartella `info_progetto/` con `CLAUDE.md` e `PROJECT.md`
 - Il deploy avviene sempre da `main` — non usare altri branch salvo diversa indicazione
+
+---
+
+## Note specifiche del progetto point-of-view
+
+### Deploy e build
+- Push su `main` → Vercel pubblica in circa 1 minuto.
+- Il file `.npmrc` con `legacy-peer-deps=true` è **necessario**: senza, l'installazione su Vercel
+  fallisce per un conflitto tra le librerie 3D.
+- `npx tsc --noEmit` segnala un errore preesistente in `Logopovattina.tsx`: non è una regressione.
+
+### Variabili d'ambiente su Vercel
+| Nome | A cosa serve |
+|---|---|
+| `VITE_FW_TOKEN` | Token pubblico Storefront API Fourthwall, usato da `/shop` |
+| `BREVO_API_KEY` | Chiave Brevo, **solo lato server** in `api/subscribe.js` (protetta) |
+| `BREVO_LIST_ID` | Lista Brevo di destinazione delle iscrizioni (3 = POV WEBSITE) |
+
+### Pannelli esterni
+Fourthwall e Brevo richiedono il **login manuale**: si apre una finestra di Chrome dedicata
+(profilo separato, porta di controllo 9444), l'utente entra, e da lì si lavora.
+Attenzione: nell'editor grafico di Fourthwall le schermate automatiche spesso vanno in timeout —
+meglio verificare il risultato dai fotomontaggi del prodotto o dalla Storefront API.
+
+### Cose che il sistema di sicurezza blocca
+Generare credenziali (token, chiavi API) e alcune azioni sui prezzi: le fa l'utente e le passa a Claude,
+che poi le salva su Vercel come variabili protette.
+
+### Regole di contenuto
+- Il sito e le email sono **in inglese**.
+- Le email della campagna ESC seguono le linee guida del grafico riportate in `PROJECT.md`.
+- Niente invii a tutta la lista senza conferma esplicita: le campagne restano bozze,
+  si manda solo l'email di prova.

@@ -102,19 +102,22 @@ point-of-view/
 ### Layout
 | Componente | File | Descrizione |
 |---|---|---|
-| **Navbar** | `components/layout/Navbar.tsx` | Fixed top, logo + menu (Events, Vision, Products, Contacts), scroll-hide animato, mix-blend-difference |
-| **Footer** | `components/layout/Footer.tsx` | Video background (`loopsitofinale.mp4`), Instagram + email, copyright dinamico |
+| **Navbar** | `components/layout/Navbar.tsx` | Fixed top, logo + menu (Events, Vision, **Shop**, Contacts), scroll-hide animato, mix-blend-difference |
+| **Footer** | `components/layout/Footer.tsx` | Video background (`loopsitofinale.mp4`), Instagram + email, link Privacy/Terms |
+| **LegalPage** | `components/layout/LegalPage.tsx` | Impaginazione condivisa di `/privacy` e `/terms` |
+| **SectionTitle** | `components/SectionTitle.tsx` | Titolo grande su due righe: prima piena, seconda in solo contorno |
+| **NewsletterPopup** | `components/NewsletterPopup.tsx` | Popup iscrizione dopo lo scroll, manda a `/api/subscribe` |
 
 ### Sezioni Homepage (ordine visivo)
 | Componente | File | Descrizione |
 |---|---|---|
 | **Hero** | `components/sections/Hero.tsx` | 3D model interattivo, parallax mouse/gyroscope, scroll indicator |
 | **About** | `components/sections/About.tsx` | Vision statement, storia (fondato 2016), città europee |
-| **Upcoming** | `components/sections/Upcoming.tsx` | Prossimo evento — Barcelona 5 giugno 2025 (Vraba Restaurant), dropdown tickets |
+| **Upcoming** | `components/sections/Upcoming.tsx` | Prossimo evento — ESC, Barcelona 2 ottobre 2026 (Albura Rooftop), flyer, line-up, dropdown tickets (RA + Shotgun) |
 | **Events** | `components/sections/Events.tsx` | Agenda europea: 3 eventi (Bologna, Lisbon, Barcelona) con video cards |
 | **Archive** | `components/sections/Archive.tsx` | Carousel 3D con 7 poster di eventi passati |
 | **SocialHub** | `components/sections/SocialHub.tsx` | Partnership The Social Hub (Bologna, Barcelona) |
-| **Merch** | `components/sections/Merch.tsx` | Carousel vortex 3D con 6 t-shirt, link Fourthwall store |
+| **Merch** | `components/sections/Merch.tsx` | Carousel vortex 3D, i pulsanti portano a `/shop` |
 | **Logopovattina** | `components/sections/Logopovattina.tsx` | Modello 3D `.glb` auto-rotante (Three.js), materiale metallo bianco |
 
 ---
@@ -124,11 +127,12 @@ point-of-view/
 ### Funzionalità attive
 - Landing page completa e responsiva (mobile-first)
 - Hero 3D interattivo con parallax mouse e giroscopio mobile
-- Sezione prossimo evento con bottone ticket
-- Agenda europea con video cards
-- Archive eventi passati (carousel 3D)
-- Sezione merchandise con link a store esterno
-- Footer con video loop e link social
+- Prossimo evento: ESC — End. Shift. Connect., 2 ottobre 2026, Albura Rooftop Barcelona
+- Agenda europea con video cards, archive eventi passati (carousel 3D)
+- **Pagina `/shop`**: carte collezionabili con foto del retro, statistiche, storia e ricompense
+- **Pagine `/privacy` e `/terms`**
+- **Popup newsletter** collegato a Brevo
+- Titoli di sezione nello stile "prima riga piena / seconda in contorno" (`SectionTitle`)
 
 ### Funzionalità pronte ma non attive
 - **Database PostgreSQL**: schema Drizzle pronto (`shared/schema.ts`), `storage.ts` usa ancora MemStorage
@@ -148,7 +152,9 @@ point-of-view/
 ## Asset Principali
 | Asset | Path | Uso |
 |---|---|---|
-| Logo | `/assets/logo-v2.png` | Navbar |
+| Logo | `/assets/logo-v2.png` | Navbar, email |
+| Flyer ESC | `/assets/flyeresc.webp` (sito), `/assets/flyeresc.jpg` (email) | Evento 2 ottobre |
+| Logo ESC | `/assets/esc-key.png` | Email campagna ESC |
 | Video Footer | `/assets/loopsitofinale.mp4` | Footer background |
 | Modello 3D | `/3DFinito.glb` | Logopovattina (Three.js) |
 
@@ -205,3 +211,39 @@ manda le iscrizioni a Brevo; senza, apre una mail precompilata verso POV (soluzi
 
 > Newsletter: le iscrizioni dal sito finiscono nella lista Brevo **POV WEBSITE (#3)** tramite `api/subscribe.js`.
 > Variabili su Vercel: `BREVO_API_KEY` (protetta) e `BREVO_LIST_ID`.
+
+
+---
+
+## Campagna ESC (evento 2 ottobre 2026)
+
+Liste Brevo: **POV ALBURA (#2)** 276 contatti storici · **POV WEBSITE (#3)** iscritti dal sito.
+Mittente verificato: `Point Of View <pointofview.milan@gmail.com>`. Piano gratuito: ~300 email al giorno.
+
+| # | Data prevista | Contenuto | Stato |
+|---|---|---|---|
+| 1 | lun 22 set | Annuncio: cos'è ESC, il rooftop, biglietti | bozza pronta in Brevo |
+| 2 | ven 26 set | I quattro collettivi + chi è POV + merch | da scrivere |
+| 3 | mar 30 set | Line-up e atmosfera | da scrivere |
+| 4 | gio 1 ott | Ultima chiamata | da scrivere |
+
+Linee guida ESC (dai PDF del grafico): idea unica `WORK MODE → PRESS ESC → LIFE MODE`;
+palette blu notte / crema / corallo / arancio tramonto, **mai nero**; tono breve e invitante;
+**un solo pulsante biglietti** per email; niente estetica cyberpunk o techno industriale.
+
+Line-up 2 ottobre: DAGZZ, E.DUE.S, MARCO G, Mario Chicoli, Massif, Mastro Sally, MATE, SALVIA.
+Biglietti: [RA](https://it.ra.co/events/2538024) · [Shotgun](https://shotgun.live/en/events/esc-united-label-end-shift-conect).
+Mappa locale: https://maps.app.goo.gl/notzBghJ7kNGoCrAA
+
+---
+
+## Shop: come si lavora
+
+- Admin Fourthwall: `admin.fourthwall.com/store/point-of-view-tge` (login manuale nel browser).
+- Ogni maglietta: **logo a rombo sul petto sinistro davanti** (≈10 cm) e **grafica grande dietro**.
+- Le stampe si caricano come **fogli 15"x18" a 150 dpi** con la grafica già posizionata: è l'unico
+  modo affidabile per ottenere sempre la stessa posizione ed evitare l'avviso di bassa risoluzione.
+- Grafiche pulite: `info_progetto/e_commerce/Magliette/Grafichemagliette/pulite/`.
+- Storie e statistiche delle carte: `client/src/lib/cards.ts` (testi da rivedere con POV).
+- Prezzi: Fourthwall ragiona in dollari e converte, quindi in euro restano i centesimi.
+  **Il prezzo arriva dalle varianti**, non dal prodotto: vedi `fetchProducts` in `client/src/lib/shop.ts`.
