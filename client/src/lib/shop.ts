@@ -71,15 +71,6 @@ export const FALLBACK_PRODUCTS: Product[] = [
     url: productUrl("bolo-by-night"),
   },
   {
-    id: "pov-logo-tee",
-    name: "POV LOGO TEE",
-    slug: "pov-logo-tee",
-    price: 26.65,
-    currency: "EUR",
-    image: "https://imgproxy.fourthwall.dev/VEK49a9TMx6sOU9ulb8ymkuzaZn0gsC3iIbdfvC03G4/w:720/sm:1/enc/N3ED0uUYyIY35WKQ/ieCzyIg6onQrQzGD/jpRc5h9Qfo2T70Mv/cXnEKgfz3HGKJW9I/At2LONmTLYohbeNf/zdgrXwye0FBRHSu0/KJ59cAB_6zbqZjhm/b6Gk-BHodJB2iAhm/44YZwUBrSu48kzIv/LuowYO0SHM_OUP-b/RGk7nr2vHW6qHew0/HnTkhfDuj86-n5dy/sc1YMcjngGJiMCBt/kp8uq6yn9FXIqLXW/Yg4n43CcNG4.jpg",
-    url: productUrl("pov-logo-tee"),
-  },
-  {
     id: "pov-eye-tee",
     name: "POV EYE TEE",
     slug: "pov-eye-tee",
