@@ -30,8 +30,9 @@ export default function Hero() {
             className="h-full w-full object-cover"
           />
         )}
-        {/* keep the navbar and the scroll hint readable */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/80" />
+        {/* vignette: dark fade at the top and bottom, clear in the middle */}
+        <div className="absolute inset-x-0 top-0 h-[40%] bg-gradient-to-b from-black via-black/60 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-black via-black/70 to-transparent" />
       </div>
 
       <motion.div
