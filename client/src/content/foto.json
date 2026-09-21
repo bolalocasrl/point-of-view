@@ -1,0 +1,640 @@
+{
+  "/storia/2022-lisbon/01-abc9679": {
+    "w": 2832,
+    "h": 4240,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2022-lisbon/02-flyer-pov-2-0": {
+    "w": 4500,
+    "h": 5625,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2022-lisbon/03-abc9619": {
+    "w": 3882,
+    "h": 2593,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2022-lisbon/04-abc9662": {
+    "w": 2832,
+    "h": 4240,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2022-lisbon/05-flyer-pov-4": {
+    "w": 4500,
+    "h": 5625,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2022-lisbon/06-abc9674": {
+    "w": 2832,
+    "h": 4240,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2022-lisbon/07-flyer-pov-10": {
+    "w": 4500,
+    "h": 5625,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2022-lisbon/08-flyer-pov-11-3": {
+    "w": 4500,
+    "h": 5625,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2022-lisbon/09-xmas-22-mg-2362": {
+    "w": 4160,
+    "h": 6240,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2022-lisbon/10-xmas-22-mg-2229": {
+    "w": 4160,
+    "h": 6240,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2023-micro-music-club/01-micro-music-flyer": {
+    "w": 2160,
+    "h": 2700,
+    "widths": [
+      800,
+      1600,
+      2160
+    ]
+  },
+  "/storia/2023-micro-music-club/02-point-of-view-milano-ripeat": {
+    "w": 2160,
+    "h": 2700,
+    "widths": [
+      800,
+      1600,
+      2160
+    ]
+  },
+  "/storia/2023-micro-music-club/03-12-giugno-pov-lodo": {
+    "w": 2160,
+    "h": 2700,
+    "widths": [
+      800,
+      1600,
+      2160
+    ]
+  },
+  "/storia/2023-micro-music-club/04-micro-music-club": {
+    "w": 2160,
+    "h": 2700,
+    "widths": [
+      800,
+      1600,
+      2160
+    ]
+  },
+  "/storia/2023-micro-music-club/05-flyer-pov245668": {
+    "w": 2160,
+    "h": 2700,
+    "widths": [
+      800,
+      1600,
+      2160
+    ]
+  },
+  "/storia/2023-micro-music-club/06-flyer-pov-beach": {
+    "w": 2160,
+    "h": 2700,
+    "widths": [
+      800,
+      1600,
+      2160
+    ]
+  },
+  "/storia/2023-micro-music-club/07-pov-per-micro": {
+    "w": 2160,
+    "h": 2700,
+    "widths": [
+      800,
+      1600,
+      2160
+    ]
+  },
+  "/storia/2023-micro-music-club/08-sjebsdibeiuy": {
+    "w": 2160,
+    "h": 2700,
+    "widths": [
+      800,
+      1600,
+      2160
+    ]
+  },
+  "/storia/2023-micro-music-club/09-mega-pov-18-novembre": {
+    "w": 4500,
+    "h": 5625,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2024-barcelona/01-img-2390": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2024-barcelona/02-barca-flyer": {
+    "w": 1080,
+    "h": 1350,
+    "widths": [
+      800,
+      1080
+    ]
+  },
+  "/storia/2024-barcelona/03-img-2994": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2024-barcelona/04-img-3001": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2024-barcelona/05-tshbcn": {
+    "w": 4500,
+    "h": 5625,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2024-barcelona/06-img-3556": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2024-barcelona/07-img-3559": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2024-barcelona/08-cinco-barcelona": {
+    "w": 1500,
+    "h": 1875,
+    "widths": [
+      800,
+      1500
+    ]
+  },
+  "/storia/2024-milan-bologna-rooftops/01-gif-mirari": {
+    "w": 4501,
+    "h": 5625,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2024-milan-bologna-rooftops/02-img-1969": {
+    "w": 2250,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2250
+    ]
+  },
+  "/storia/2024-milan-bologna-rooftops/03-img-1972": {
+    "w": 2250,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2250
+    ]
+  },
+  "/storia/2024-milan-bologna-rooftops/04-milano-sinnn": {
+    "w": 1080,
+    "h": 1350,
+    "widths": [
+      800,
+      1080
+    ]
+  },
+  "/storia/2024-milan-bologna-rooftops/05-tshbo": {
+    "w": 1754,
+    "h": 2481,
+    "widths": [
+      800,
+      1600,
+      1754
+    ]
+  },
+  "/storia/2024-milan-bologna-rooftops/06-img-2603": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2024-milan-bologna-rooftops/07-img-2611": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2024-milan-bologna-rooftops/08-img-3248": {
+    "w": 2250,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2250
+    ]
+  },
+  "/storia/2024-milan-bologna-rooftops/09-img-3257": {
+    "w": 2250,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2250
+    ]
+  },
+  "/storia/2024-milan-bologna-rooftops/10-gif-tutto-passa": {
+    "w": 4167,
+    "h": 5625,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2024-milan-bologna-rooftops/11-img-3943": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2024-milan-bologna-rooftops/12-img-3987": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2025-forum-station/01-img-5037": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2025-forum-station/02-forum-station": {
+    "w": 1490,
+    "h": 1862,
+    "widths": [
+      800,
+      1490
+    ]
+  },
+  "/storia/2025-forum-station/03-img-4886": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2025-forum-station/04-img-4888": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2025-lisbon-caparica/01-img-4242": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2025-lisbon-caparica/02-pov-micro-1": {
+    "w": 1080,
+    "h": 1350,
+    "widths": [
+      800,
+      1080
+    ]
+  },
+  "/storia/2025-lisbon-caparica/03-img-4156": {
+    "w": 3000,
+    "h": 2881,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2025-lisbon-caparica/04-img-4231": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2025-lisbon-caparica/05-img-4251": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2025-lisbon-caparica/06-groove-armanda": {
+    "w": 1080,
+    "h": 1350,
+    "widths": [
+      800,
+      1080
+    ]
+  },
+  "/storia/2025-lisbon-caparica/07-img-4317": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2025-lisbon-caparica/08-pov-reunion-micro": {
+    "w": 1080,
+    "h": 1350,
+    "widths": [
+      800,
+      1080
+    ]
+  },
+  "/storia/2025-lisbon-caparica/09-img-4367": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2025-lisbon-caparica/10-guiborato": {
+    "w": 1600,
+    "h": 2000,
+    "widths": [
+      800,
+      1600
+    ]
+  },
+  "/storia/2025-lisbon-caparica/11-img-4514": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2025-lisbon-caparica/12-img-4473": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2025-lisbon-caparica/13-img-4530": {
+    "w": 2400,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2400
+    ]
+  },
+  "/storia/2025-lisbon-caparica/14-micro-pov-12-sett-pre-beach": {
+    "w": 1081,
+    "h": 1351,
+    "widths": [
+      800,
+      1081
+    ]
+  },
+  "/storia/2025-lisbon-caparica/15-img-4721": {
+    "w": 2250,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2250
+    ]
+  },
+  "/storia/2025-lisbon-caparica/16-img-4718": {
+    "w": 2250,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2250
+    ]
+  },
+  "/storia/2025-lisbon-caparica/17-tonno-disko": {
+    "w": 1081,
+    "h": 1351,
+    "widths": [
+      800,
+      1081
+    ]
+  },
+  "/storia/2026-albura-esc/01-flyeralbura": {
+    "w": 1792,
+    "h": 2400,
+    "widths": [
+      800,
+      1600,
+      1792
+    ]
+  },
+  "/storia/2026-albura-esc/02-whatsapp-image-2026-09-15-at-17-31-09": {
+    "w": 2295,
+    "h": 2869,
+    "widths": [
+      800,
+      1600,
+      2295
+    ]
+  },
+  "/storia/2026-vraba/01-img-5168": {
+    "w": 2250,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2250
+    ]
+  },
+  "/storia/2026-vraba/02-vraba-flyer": {
+    "w": 2000,
+    "h": 2503,
+    "widths": [
+      800,
+      1600,
+      2000
+    ]
+  },
+  "/storia/2026-vraba/03-img-5209": {
+    "w": 2250,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2250
+    ]
+  },
+  "/storia/2026-vraba/04-img-5149": {
+    "w": 2250,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2250
+    ]
+  },
+  "/storia/2026-vraba/05-img-5231": {
+    "w": 2250,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2250
+    ]
+  },
+  "/storia/2026-vraba/06-img-5173": {
+    "w": 2250,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2250
+    ]
+  },
+  "/storia/2026-vraba/07-img-5211": {
+    "w": 2250,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2250
+    ]
+  },
+  "/storia/2026-vraba/08-img-5177": {
+    "w": 2250,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2250
+    ]
+  },
+  "/storia/2026-vraba/09-img-5264": {
+    "w": 2250,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2250
+    ]
+  },
+  "/storia/2026-vraba/10-img-5180": {
+    "w": 2250,
+    "h": 3000,
+    "widths": [
+      800,
+      1600,
+      2250
+    ]
+  }
+}
