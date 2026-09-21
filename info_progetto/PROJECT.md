@@ -222,9 +222,9 @@ Mittente verificato: `Point Of View <pointofview.milan@gmail.com>`. Piano gratui
 
 | # | Data prevista | Contenuto | Stato |
 |---|---|---|---|
-| 1 | lun 22 set | Annuncio: cos'è ESC, il rooftop, biglietti | bozza pronta in Brevo |
-| 2 | ven 26 set | I quattro collettivi + chi è POV + merch | da scrivere |
-| 3 | mar 30 set | Line-up e atmosfera | da scrivere |
+| 1 | lun 21 set | Annuncio: cos'è ESC, il rooftop, biglietti | bozza pronta in Brevo |
+| 2 | ven 25 set | I quattro collettivi + chi è POV + merch | da scrivere |
+| 3 | mar 29 set | Line-up e atmosfera | da scrivere |
 | 4 | gio 1 ott | Ultima chiamata | da scrivere |
 
 Linee guida ESC (dai PDF del grafico): idea unica `WORK MODE → PRESS ESC → LIFE MODE`;
