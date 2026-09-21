@@ -1,3 +1,5 @@
+import { Link } from "wouter";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function About() {
@@ -35,6 +37,12 @@ export default function About() {
               <p className="text-lg text-white/60 font-body leading-relaxed">
                 Milan — Lisbon — Barcelona — Formentera — Bologna.
               </p>
+              <Link
+                href="/story"
+                className="mt-8 inline-flex items-center gap-2 rounded-full border-2 border-white px-6 py-3 text-xs font-bold uppercase tracking-widest transition-colors duration-300 hover:bg-white hover:text-black"
+              >
+                Our story <ArrowRight size={14} />
+              </Link>
             </motion.div>
 
             <motion.div

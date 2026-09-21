@@ -144,14 +144,8 @@ export default function Story() {
                 <p className="text-lg leading-relaxed text-white/65">{c.text}</p>
               </motion.div>
 
-              {c.photos.length > 0 ? (
+              {c.photos.length > 0 && (
                 <Collage photos={c.photos} onOpen={(index) => setOpen({ photos: c.photos, index, caption: `${c.date} — ${c.title}` })} />
-              ) : (
-                <div className="flex aspect-[16/7] items-center justify-center border border-white/10">
-                  <span className="font-display text-7xl font-black tracking-tighter text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.35)] md:text-[9rem]">
-                    {c.year}
-                  </span>
-                </div>
               )}
             </motion.section>
           ))}

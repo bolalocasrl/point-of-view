@@ -46,6 +46,7 @@ export default function Navbar() {
       <div className="flex items-center gap-6 text-sm font-medium tracking-wide uppercase font-body ml-auto">
         <a href="#events" className="hover:line-through decoration-1 underline-offset-4 transition-all hidden md:block">Events</a>
         <a href="#vision" className="hover:line-through decoration-1 underline-offset-4 transition-all hidden md:block">Vision</a>
+        <Link href="/story" className="hover:line-through decoration-1 underline-offset-4 transition-all hidden md:block">Story</Link>
         <Link href="/shop" className="hover:line-through decoration-1 underline-offset-4 transition-all hidden md:block">Shop</Link>
         <a 
           href="#contacts" 

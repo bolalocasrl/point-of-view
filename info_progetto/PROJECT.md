@@ -91,7 +91,7 @@ point-of-view/
 |---|---|---|
 | `/` | `client/src/pages/Home.tsx` | Pagina principale (landing one-page) |
 | `/shop` | `client/src/pages/Shop.tsx` | Vetrina prodotti, dati dalla Storefront API Fourthwall |
-| `/story` | `client/src/pages/Story.tsx` | Linea del tempo POV 2016-2026 con foto dal Drive (**bozza**, noindex) |
+| `/story` | `client/src/pages/Story.tsx` | Linea del tempo POV 2016-2026 con foto dal Drive (pubblica, nel menù "Story" e nella sezione Vision) |
 | `/privacy` | `client/src/pages/Privacy.tsx` | Privacy policy |
 | `/terms` | `client/src/pages/Terms.tsx` | Termini d'uso |
 | `*` | `client/src/pages/not-found.tsx` | Pagina 404 custom |
@@ -254,7 +254,7 @@ Mappa locale: https://maps.app.goo.gl/notzBghJ7kNGoCrAA
 
 ## Pagina /story (galleria)
 
-- Testi e capitoli: `client/src/content/story.ts`. `STORY_DRAFT = true` → etichetta "Draft", noindex, niente link nei menu.
+- Testi e capitoli: `client/src/content/story.ts`. `STORY_DRAFT = false`: pagina pubblica. Rimettendolo a `true` torna in bozza (noindex + etichetta).
 - Foto: `client/public/storia/<capitolo>/` in 800/1600/2400 px webp, create con `scripts/foto.mjs`
   (`npm i --no-save sharp`, poi `node scripts/foto.mjs ~/Desktop/PROGETTI/point-of-view-foto/storia storia`).
 - Originali: `PROGETTI/point-of-view-foto/` (fuori da git). `originali/` = scaricati dal Drive, `storia/` = ordinati per capitolo.

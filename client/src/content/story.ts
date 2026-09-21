@@ -8,7 +8,7 @@
 import manifest from "./foto.json";
 
 // While true the page shows a draft banner, is not indexed and is not linked in menus
-export const STORY_DRAFT = true;
+export const STORY_DRAFT = false;
 
 export type Photo = { base: string; alt: string; w: number; h: number; widths: number[] };
 
