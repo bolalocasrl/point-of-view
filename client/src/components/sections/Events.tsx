@@ -8,7 +8,7 @@ const events = [
     date: "FEB 2025",
     title: "HOUSE NATION",
     location: "Bologna",
-    video: "/assets/bolognahousenation.webm",
+    video: "/assets/bolognahousenation.mp4",
     status: "Italy"
   },
   {
@@ -16,7 +16,7 @@ const events = [
     date: "JUL 2025",
     title: "CAPARICA",
     location: "Lisbon",
-    video: "/assets/guiporatosito.webm",
+    video: "/assets/guiporatosito.mp4",
     status: "Portugal"
   },
   {
@@ -24,7 +24,7 @@ const events = [
     date: "NOV 2025",
     title: "FORUM STATION",
     location: "Barcelona",
-    video: "/assets/forumstationsito.webm",
+    video: "/assets/forumstationsito.mp4",
     status: "Spain"
   }
 ];
