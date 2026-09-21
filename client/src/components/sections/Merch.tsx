@@ -3,12 +3,12 @@ import { Link } from "wouter";
 import SectionTitle from "@/components/SectionTitle";
 
 const products = [
-  { id: 1, name: "POV SIGNATURE TEE", price: "€26", image: "/merch/black-t-shirts.jpg" },
-  { id: 2, name: "BCN STYLE", price: "€26", image: "/merch/POV_T-SHORT_MONSTER.jpg" },
-  { id: 3, name: "SOLUNA TEE", price: "€26", image: "/merch/soluna.jpg" },
-  { id: 4, name: "DRAWING TEE", price: "€26", image: "/merch/T-SHORT_DRRAWING.jpg" },
-  { id: 5, name: "BOLO BY NIGHT", price: "€26", image: "/merch/gnomo.jpg" },
-  { id: 6, name: "HEADQUARTER, LISBOA", price: "€26", image: "/merch/maglietta_pov.jpg" },
+  { id: 1, name: "POV SIGNATURE TEE", image: "/merch/black-t-shirts.jpg" },
+  { id: 2, name: "BCN STYLE", image: "/merch/POV_T-SHORT_MONSTER.jpg" },
+  { id: 3, name: "SOLUNA TEE", image: "/merch/soluna.jpg" },
+  { id: 4, name: "DRAWING TEE", image: "/merch/T-SHORT_DRRAWING.jpg" },
+  { id: 5, name: "BOLO BY NIGHT", image: "/merch/gnomo.jpg" },
+  { id: 6, name: "HEADQUARTER, LISBOA", image: "/merch/maglietta_pov.jpg" },
 ];
 
 export default function Merch() {
@@ -64,7 +64,6 @@ export default function Merch() {
                   </div>
                   <div className="flex justify-between items-end">
                     <h3 className="font-display font-bold uppercase text-lg md:group-hover:text-stroke group-[.active]:text-stroke transition-all">{product.name}</h3>
-                    <span className="font-body text-white/60">{product.price}</span>
                   </div>
                 </div>
               </div>
