@@ -1,27 +1,14 @@
 import { Instagram } from "lucide-react";
 import { Link } from "wouter";
+import LogoStage from "@/components/LogoStage";
 
 export default function Footer() {
   return (
     <footer id="contacts" className="relative bg-black border-t border-white/10 text-white overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0">
-        <video
-          ref={(el: HTMLVideoElement | null) => { if (el) el.muted = true; }}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="w-full h-full min-h-full object-cover"
-        >
-          <source src="/assets/loopsitofinale.mp4" type="video/mp4" />
-        </video>
-        {/* Overlay nero al 40% */}
-        <div className="absolute inset-0 bg-black/40" />
-      </div>
+      {/* Rotating 3D logo */}
+      <LogoStage className="h-[55vh] md:h-[70vh]" />
 
-      <div className="relative z-10 py-20 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center text-center">
+      <div className="relative z-10 -mt-8 pb-20 md:-mt-16 md:pb-32 px-6 md:px-12 flex flex-col items-center justify-center text-center">
         <span className="block text-xs font-bold uppercase tracking-widest text-white/50 mb-8">
           Connection
         </span>
