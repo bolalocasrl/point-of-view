@@ -91,6 +91,7 @@ point-of-view/
 |---|---|---|
 | `/` | `client/src/pages/Home.tsx` | Pagina principale (landing one-page) |
 | `/shop` | `client/src/pages/Shop.tsx` | Vetrina prodotti, dati dalla Storefront API Fourthwall |
+| `/story` | `client/src/pages/Story.tsx` | Linea del tempo POV 2016-2026 con foto dal Drive (**bozza**, noindex) |
 | `/privacy` | `client/src/pages/Privacy.tsx` | Privacy policy |
 | `/terms` | `client/src/pages/Terms.tsx` | Termini d'uso |
 | `*` | `client/src/pages/not-found.tsx` | Pagina 404 custom |
@@ -247,3 +248,17 @@ Mappa locale: https://maps.app.goo.gl/notzBghJ7kNGoCrAA
 - Storie e statistiche delle carte: `client/src/lib/cards.ts` (testi da rivedere con POV).
 - Prezzi: Fourthwall ragiona in dollari e converte, quindi in euro restano i centesimi.
   **Il prezzo arriva dalle varianti**, non dal prodotto: vedi `fetchProducts` in `client/src/lib/shop.ts`.
+
+
+---
+
+## Pagina /story (galleria)
+
+- Testi e capitoli: `client/src/content/story.ts`. `STORY_DRAFT = true` → etichetta "Draft", noindex, niente link nei menu.
+- Foto: `client/public/storia/<capitolo>/` in 800/1600/2400 px webp, create con `scripts/foto.mjs`
+  (`npm i --no-save sharp`, poi `node scripts/foto.mjs ~/Desktop/PROGETTI/point-of-view-foto/storia storia`).
+- Originali: `PROGETTI/point-of-view-foto/` (fuori da git). `originali/` = scaricati dal Drive, `storia/` = ordinati per capitolo.
+- Drive POV condiviso con link: cartella `Brand POINT OF VIEW` (Flyer, FOTOS POV/with people, grafiche/loghi/photo vraba, VideoPromo/AfterMovie).
+- Date delle serate ricavate dalla data di scatto delle foto confrontata con le date dei flyer;
+  prime serate per città dalla presentazione ufficiale (Milano 22/12/2016, Formentera 17/08/2017,
+  Lisbona 25/03/2022, Barcellona 12/04/2024, Bologna 28/09/2024).
