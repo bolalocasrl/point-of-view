@@ -14,11 +14,11 @@ import { cardFor, RARITY_LABEL } from "@/lib/cards";
 function Stat({ label, value }: { label: string; value: number }) {
   return (
     <div className="flex items-center gap-2">
-      <span className="w-14 shrink-0 text-[9px] uppercase tracking-widest text-white/40">{label}</span>
+      <span className="w-16 shrink-0 text-[11px] md:w-14 md:text-[9px] uppercase tracking-widest text-white/40">{label}</span>
       <span className="relative h-[3px] flex-1 bg-white/10">
         <span className="absolute inset-y-0 left-0 bg-white/70" style={{ width: `${value}%` }} />
       </span>
-      <span className="w-6 text-right font-body text-[10px] text-white/50">{value}</span>
+      <span className="w-6 text-right font-body text-[11px] md:text-[10px] text-white/50">{value}</span>
     </div>
   );
 }
@@ -50,11 +50,11 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
           <h3 className="font-display text-sm font-bold uppercase leading-tight tracking-tight md:text-base">
             {product.name}
           </h3>
-          <p className="mt-1 text-[9px] uppercase tracking-[0.2em] text-white/40">
+          <p className="mt-1 text-[11px] md:text-[9px] uppercase tracking-[0.2em] text-white/40">
             {card.serie} · {card.city}
           </p>
         </div>
-        <span className="shrink-0 border border-white/20 px-2 py-1 text-[9px] uppercase tracking-widest text-white/50">
+        <span className="shrink-0 border border-white/20 px-2 py-1 text-[11px] md:text-[9px] uppercase tracking-widest text-white/50">
           {RARITY_LABEL[card.rarity]}
         </span>
       </header>
@@ -83,7 +83,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
             POV
           </div>
         )}
-        <span className="absolute left-0 top-0 bg-white px-2 py-1 font-body text-[10px] font-black uppercase tracking-widest text-black">
+        <span className="absolute left-0 top-0 bg-white px-2 py-1 font-body text-[11px] md:text-[10px] font-black uppercase tracking-widest text-black">
           {formatPrice(product.price, product.currency)}
         </span>
       </div>
@@ -97,11 +97,11 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
 
       {/* ability */}
       <div className="relative flex-1 border-t border-white/10 pt-3">
-        <p className="text-[9px] uppercase tracking-[0.2em] text-white/40">Special ability</p>
-        <p className="mt-1 font-display text-xs font-bold uppercase tracking-tight text-white">
+        <p className="text-[11px] md:text-[9px] uppercase tracking-[0.2em] text-white/40">Special ability</p>
+        <p className="mt-1 font-display text-sm font-bold uppercase tracking-tight text-white md:text-xs">
           {card.ability}
         </p>
-        <p className="mt-2 text-xs leading-relaxed text-white/50">{card.lore}</p>
+        <p className="mt-2 text-sm leading-relaxed text-white/60 md:text-xs md:text-white/50">{card.lore}</p>
       </div>
 
       {/* buy */}
@@ -109,7 +109,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
         href={product.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative mt-4 flex items-center justify-center gap-1 bg-white px-4 py-3 font-body text-[10px] font-black uppercase tracking-[0.2em] text-black transition-colors duration-300 hover:bg-white/80"
+        className="relative mt-4 flex items-center justify-center gap-1 bg-white px-4 py-4 md:py-3 font-body text-[11px] md:text-[10px] font-black uppercase tracking-[0.2em] text-black transition-colors duration-300 hover:bg-white/80"
       >
         Buy now <ArrowUpRight size={12} />
       </a>
@@ -175,7 +175,7 @@ export default function Shop() {
         <section className="mx-auto max-w-7xl">
           <div className="mb-6 flex items-end justify-between border-b border-white/10 pb-4">
             <h2 className="font-display text-xl font-bold uppercase tracking-tight md:text-2xl">The collection</h2>
-            <span className="text-[10px] uppercase tracking-widest text-white/40">
+            <span className="text-[11px] md:text-[10px] uppercase tracking-widest text-white/40">
               {products.length} cards
             </span>
           </div>
@@ -187,7 +187,7 @@ export default function Shop() {
           </div>
 
           {loading && (
-            <p className="mt-8 text-center text-[10px] uppercase tracking-widest text-white/30">Syncing store…</p>
+            <p className="mt-8 text-center text-[11px] md:text-[10px] uppercase tracking-widest text-white/30">Syncing store…</p>
           )}
         </section>
 
@@ -229,7 +229,7 @@ export default function Shop() {
           </div>
 
           <div className="mt-10 border-t border-white/10 pt-6">
-            <h3 className="mb-3 text-[10px] uppercase tracking-[0.2em] text-white/40">How it works</h3>
+            <h3 className="mb-3 text-[11px] md:text-[10px] uppercase tracking-[0.2em] text-white/40">How it works</h3>
             <ul className="grid grid-cols-1 gap-2 text-sm leading-relaxed text-white/50 md:grid-cols-2">
               <li>Keep your order confirmations — they are your proof.</li>
               <li>Write to pointofview.milan@gmail.com before the night you want to use it.</li>
@@ -271,8 +271,8 @@ export default function Shop() {
           >
             <Instagram size={18} />
           </a>
-          <Link href="/privacy" className="text-[10px] uppercase tracking-widest text-white/40 transition-colors hover:text-white">Privacy</Link>
-          <Link href="/terms" className="text-[10px] uppercase tracking-widest text-white/40 transition-colors hover:text-white">Terms</Link>
+          <Link href="/privacy" className="py-2 text-[11px] md:text-[10px] uppercase tracking-widest text-white/40 transition-colors hover:text-white">Privacy</Link>
+          <Link href="/terms" className="py-2 text-[11px] md:text-[10px] uppercase tracking-widest text-white/40 transition-colors hover:text-white">Terms</Link>
         </div>
       </footer>
     </div>

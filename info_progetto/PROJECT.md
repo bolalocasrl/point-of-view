@@ -262,3 +262,13 @@ Mappa locale: https://maps.app.goo.gl/notzBghJ7kNGoCrAA
 - Date delle serate ricavate dalla data di scatto delle foto confrontata con le date dei flyer;
   prime serate per città dalla presentazione ufficiale (Milano 22/12/2016, Formentera 17/08/2017,
   Lisbona 25/03/2022, Barcellona 12/04/2024, Bologna 28/09/2024).
+
+---
+
+## Eventi in calendario
+
+- I prossimi eventi stanno in `client/src/content/events.ts` (data, locale, line-up, flyer, biglietti).
+- Ogni evento ha `endsAt`: **dopo quell'ora sparisce da solo** dalla homepage e dal pulsante "Get tickets" del menù.
+- Se non c'è nessun evento futuro, la sezione Upcoming mostra "Coming soon" con l'iscrizione alla newsletter.
+- Per aggiungere il prossimo: copiare una voce, cambiare i campi, `endsAt` con il fuso del locale
+  (Barcellona +02:00 d'estate, +01:00 d'inverno).

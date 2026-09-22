@@ -1,23 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionTitle from "@/components/SectionTitle";
-
-const upcomingEvents = [
-  {
-    id: 1,
-    city: "Barcelona",
-    title: "ESC — End. Shift. Connect.",
-    date: "Friday, October 2 — 19:00 to 02:00",
-    venue: "Albura Rooftop, Moll d'Espanya 8, Ciutat Vella",
-    lineup: "DAGZZ, E.DUE.S, MARCO G, Mario Chicoli, Massif, Mastro Sally, MATE, SALVIA",
-    blurb: "A sunset-to-night rooftop session above the port. House, deep house and tech house, four collectives, one direction: Point of View x No Alibi x Groovers Gonna Groove x Placeo.",
-    image: "/assets/flyeresc.webp",
-    ticketOptions: [
-      { name: "Resident Advisor", url: "https://it.ra.co/events/2538024" },
-      { name: "Shotgun", url: "https://shotgun.live/en/events/esc-united-label-end-shift-conect" }
-    ]
-  }
-];
+import NewsletterInline from "@/components/NewsletterInline";
+import { upcomingEvents } from "@/content/events";
 
 function TicketDropdown({ options }: { options: { name: string; url: string }[] }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,6 +61,9 @@ function TicketDropdown({ options }: { options: { name: string; url: string }[] 
 }
 
 export default function Upcoming() {
+  // re-evaluated on every visit: a finished event drops off on its own
+  const events = upcomingEvents();
+
   return (
     <section id="upcoming" className="py-24 md:py-32 px-6 md:px-12 bg-black text-white border-t border-white/10">
       <div className="max-w-7xl mx-auto">
@@ -85,8 +73,23 @@ export default function Upcoming() {
           </span>
           <SectionTitle solid="Upcoming" outline="Events" />
         </div>
+        {events.length === 0 && (
+          <div className="grid grid-cols-1 items-end gap-10 border-l border-white/20 pl-4 md:grid-cols-2 md:pl-8">
+            <div>
+              <p className="mb-3 text-sm font-bold uppercase tracking-widest text-white/50">Next Stop</p>
+              <h3 className="font-display text-4xl font-bold uppercase leading-none tracking-tight md:text-6xl">
+                Coming<br />
+                <span className="text-transparent [-webkit-text-stroke:1px_white]">soon</span>
+              </h3>
+              <p className="mt-6 max-w-md text-base leading-relaxed text-white/60 md:text-lg">
+                We are working on the next date. Join the list and you will be the first to know — early tickets included.
+              </p>
+            </div>
+            <NewsletterInline buttonLabel="Notify me" />
+          </div>
+        )}
         <div className="grid grid-cols-1 gap-12">
-          {upcomingEvents.map((event, index) => (
+          {events.map((event) => (
             <div key={event.id} className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
 
               <div className="flex flex-col items-start gap-6 md:gap-8 order-1 md:order-2 w-full max-w-full">
