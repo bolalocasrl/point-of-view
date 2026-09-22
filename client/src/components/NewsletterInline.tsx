@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import { trackLead } from "@/lib/tracking";
 
 // Inline newsletter form: same endpoint as the popup (/api/subscribe → Brevo).
 export default function NewsletterInline({ buttonLabel = "Join the list" }: { buttonLabel?: string }) {
@@ -18,6 +19,7 @@ export default function NewsletterInline({ buttonLabel = "Join the list" }: { bu
       });
       if (!res.ok) throw new Error(String(res.status));
       try { localStorage.setItem("pov-newsletter", JSON.stringify({ status: "subscribed", at: Date.now() })); } catch {}
+      trackLead(buttonLabel.toLowerCase().replace(/\s+/g, "-"));
       setStatus("done");
     } catch {
       setStatus("error");

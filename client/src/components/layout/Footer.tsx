@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import LogoStage from "@/components/LogoStage";
 import NewsletterInline from "@/components/NewsletterInline";
 import { upcomingEvents } from "@/content/events";
+import { openCookieSettings, TRACKING_ENABLED } from "@/lib/tracking";
 
 export default function Footer() {
   const next = upcomingEvents()[0];
@@ -93,6 +94,11 @@ export default function Footer() {
         <div className="flex gap-6">
           <Link href="/privacy" className="py-2 text-[11px] uppercase tracking-widest text-white/40 transition-colors hover:text-white">Privacy</Link>
           <Link href="/terms" className="py-2 text-[11px] uppercase tracking-widest text-white/40 transition-colors hover:text-white">Terms</Link>
+          {TRACKING_ENABLED && (
+            <button type="button" onClick={openCookieSettings} className="py-2 text-[11px] uppercase tracking-widest text-white/40 transition-colors hover:text-white">
+              Cookies
+            </button>
+          )}
         </div>
       </div>
     </footer>

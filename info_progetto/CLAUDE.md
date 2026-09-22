@@ -81,6 +81,7 @@ Supabase contiene dati reali. Prima di qualsiasi operazione sul database:
 | `FOURTHWALL_TOKEN` | Token Storefront API Fourthwall, **solo lato server** in `api/products.js` (protetto) |
 | `BREVO_API_KEY` | Chiave Brevo, **solo lato server** in `api/subscribe.js` (protetta) |
 | `BREVO_LIST_ID` | Lista Brevo di destinazione delle iscrizioni (3 = POV WEBSITE) |
+| `VITE_META_PIXEL_ID` | ID del Meta Pixel: attiva banner cookie e tracciamento (non ancora impostato) |
 
 ### Pannelli esterni
 Fourthwall e Brevo richiedono il **login manuale**: si apre una finestra di Chrome dedicata

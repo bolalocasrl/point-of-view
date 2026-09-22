@@ -272,3 +272,13 @@ Mappa locale: https://maps.app.goo.gl/notzBghJ7kNGoCrAA
 - Se non c'è nessun evento futuro, la sezione Upcoming mostra "Coming soon" con l'iscrizione alla newsletter.
 - Per aggiungere il prossimo: copiare una voce, cambiare i campi, `endsAt` con il fuso del locale
   (Barcellona +02:00 d'estate, +01:00 d'inverno).
+
+---
+
+## Cookie e Meta Pixel
+
+- Codice: `client/src/lib/tracking.ts` (consenso + pixel) e `client/src/components/CookieBanner.tsx`.
+- **Si attiva solo impostando `VITE_META_PIXEL_ID` su Vercel** (l'ID numerico del pixel, da Meta Events Manager). Senza ID: niente banner e niente tracciamento.
+- Il pixel parte **solo dopo "Accept"**; "Only necessary" non carica nulla. La scelta si cambia dal link "Cookies" nel footer.
+- Eventi inviati: `PageView` a ogni pagina, `Lead` a ogni iscrizione newsletter (popup, footer, "Coming soon").
+- La privacy policy (`/privacy`, sezione "Cookies and advertising") descrive già il pixel.

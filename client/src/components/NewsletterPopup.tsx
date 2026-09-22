@@ -1,6 +1,7 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import { getConsent, TRACKING_ENABLED, trackLead } from "@/lib/tracking";
 
 // Signups go to /api/subscribe, which adds them to the Brevo list server-side
 // (see api/subscribe.js). The Brevo key never reaches the browser.
@@ -29,6 +30,8 @@ function saveState(status: "dismissed" | "subscribed") {
 }
 
 function shouldShow() {
+  // wait until the visitor has answered the cookie banner
+  if (TRACKING_ENABLED && getConsent() === null) return false;
   const state = readState();
   if (!state) return true;
   if (state.status === "subscribed") return false;
@@ -84,6 +87,7 @@ export default function NewsletterPopup() {
       });
       if (!res.ok) throw new Error(`subscribe: ${res.status}`);
       saveState("subscribed");
+      trackLead("popup");
       setStatus("done");
     } catch {
       setStatus("error");
