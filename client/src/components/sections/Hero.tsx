@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { ArrowDown } from "lucide-react";
+import { upcomingEvents } from "@/content/events";
 
 // Full-screen looping video.
 // - Wide screens: the video covers the whole hero (1080p file on big screens).
@@ -14,6 +16,14 @@ const BACKDROP = "/assets/hero-blur.jpg";
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [src, setSrc] = useState<string | null>(null);
+  const next = upcomingEvents()[0];
+  // "Friday, October 2 — 19:00 to 02:00" → "Oct 2"
+  const nextDate = (() => {
+    const day = next?.date.split("—")[0].split(",")[1]?.trim();
+    if (!day) return next?.date.split("—")[0].trim();
+    const [month, num] = day.split(" ");
+    return `${month.slice(0, 3)} ${num}`;
+  })();
 
   useEffect(() => {
     setSrc(window.matchMedia("(min-width: 1280px)").matches ? WIDE_SRC : DEFAULT_SRC);
@@ -74,15 +84,42 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[40%] bg-gradient-to-b from-black via-black/60 to-transparent" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-black via-black/70 to-transparent" />
 
-      <motion.div
+      {/* phones: the empty band above the video gives a reason to scroll */}
+      <motion.a
+        href="#upcoming"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.8 }}
+        className="absolute inset-x-0 top-[17%] z-10 mx-auto hidden w-fit flex-col items-center gap-3 px-6 text-center portrait:flex"
+      >
+        <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-white/50">Art & music events · since 2016</span>
+        <span className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-white/40 bg-black/30 px-5 py-3 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
+          {next ? <>Next stop: {next.city} · {nextDate}</> : <>Next date coming soon</>}
+          <ArrowDown size={14} />
+        </span>
+      </motion.a>
+
+      {/* scroll cue: bigger and animated on phones, discreet on desktop */}
+      <motion.a
+        href="#vision"
+        aria-label="Scroll down"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2"
+        className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3 portrait:bottom-[9%]"
       >
-        <span className="text-[10px] uppercase tracking-widest text-white/60">Scroll</span>
-        <div className="h-12 w-[1px] bg-gradient-to-b from-white to-transparent opacity-50" />
-      </motion.div>
+        <span className="text-[10px] uppercase tracking-widest text-white/60 portrait:text-xs portrait:font-bold portrait:tracking-[0.3em] portrait:text-white/80">
+          <span className="portrait:hidden">Scroll</span>
+          <span className="hidden portrait:inline">Scroll to enter</span>
+        </span>
+        <span className="relative h-12 w-[1px] overflow-hidden bg-white/20 portrait:h-20">
+          <motion.span
+            className="absolute left-1/2 top-0 h-3 w-[3px] -translate-x-1/2 rounded-full bg-white portrait:h-5"
+            animate={{ y: ["-100%", "400%"] }}
+            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </span>
+      </motion.a>
     </section>
   );
 }
