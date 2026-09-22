@@ -133,3 +133,12 @@
     }
   }
 }
+
+/* Hero loop: never show the browser's play button over the video
+   (iOS draws one when autoplay is blocked; the poster frame shows instead) */
+.hero-video::-webkit-media-controls,
+.hero-video::-webkit-media-controls-start-playback-button,
+.hero-video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
