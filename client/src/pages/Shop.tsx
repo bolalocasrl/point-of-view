@@ -160,7 +160,7 @@ export default function Shop() {
       <main className="px-6 pb-24 pt-32 md:px-12 md:pt-44">
         {/* hero */}
         <section className="mx-auto mb-14 max-w-7xl md:mb-20">
-          <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-white/50">(04) Store</span>
+          <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-white/50">(05) Store</span>
           <h1 className="font-display text-6xl font-black uppercase leading-[0.85] tracking-tighter md:text-[11rem]">
             POV<br />
             <span className="text-transparent [-webkit-text-stroke:1px_white]">Merch</span>
@@ -193,7 +193,7 @@ export default function Shop() {
 
         {/* rewards */}
         <section className="mx-auto mt-20 max-w-7xl border border-white/15 p-6 md:mt-28 md:p-12">
-          <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-white/50">(05) Collect</span>
+          <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-white/50">(06) Collect</span>
           <h2 className="font-display text-4xl font-black uppercase leading-[0.85] tracking-tighter md:text-7xl">
             Unlock<br />
             <span className="text-transparent [-webkit-text-stroke:1px_white]">Rewards</span>

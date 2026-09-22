@@ -142,7 +142,7 @@ export default function Events() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24">
           <div>
             <span className="block text-xs font-bold uppercase tracking-widest text-white/50 mb-2">
-              (02) Agenda
+              (03) Agenda
             </span>
             <SectionTitle solid="Around" outline="Europe" />
           </div>

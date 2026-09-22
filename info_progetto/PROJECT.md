@@ -196,13 +196,13 @@ npm run db:push   # Applica schema Drizzle al DB
 
 ### Collegamento sito ↔ shop
 
-La pagina `/shop` legge i prodotti dalla Storefront API:
+La pagina `/shop` legge i prodotti da `/api/products`, che interroga la Storefront API:
 
 ```
 GET https://storefront-api.fourthwall.com/v1/collections/all/products?storefront_token=<TOKEN>&currency=EUR
 ```
 
-Il token sta nella variabile d'ambiente **`VITE_FW_TOKEN`** su Vercel (produzione, preview e sviluppo).
+Il token sta nella variabile **`FOURTHWALL_TOKEN`** su Vercel (protetta, letta solo da `api/products.js`).
 Se manca o l'API non risponde, la pagina usa la lista di riserva in `client/src/lib/shop.ts`.
 
 ### Newsletter sul sito

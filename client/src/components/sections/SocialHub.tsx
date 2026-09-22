@@ -35,7 +35,7 @@ export default function SocialHub() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 md:mb-24">
           <span className="block text-xs font-bold uppercase tracking-widest text-white/50 mb-2">
-            (03) Collaborations
+            (04) Collaborations
           </span>
           <SectionTitle solid="The Social Hub" outline="x Point of View" />
         </div>

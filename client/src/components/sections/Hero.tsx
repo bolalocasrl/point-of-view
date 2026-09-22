@@ -15,6 +15,8 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen w-full overflow-hidden bg-black">
+      {/* the brand name lives inside the video: this heading is for search engines and screen readers */}
+      <h1 className="sr-only">Point of View — art and music events in Barcelona, Lisbon, Milan and Bologna</h1>
       <div className="absolute inset-0">
         {src && (
           <video

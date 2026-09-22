@@ -1,13 +1,12 @@
 // Products for the /shop page.
 //
-// They are read live from the Fourthwall Storefront API when a token is set
-// (Vercel env var VITE_FW_TOKEN, created in Fourthwall > Settings > For
-// developers > Storefront API). Without a token, or if the call fails, the
-// page falls back to the list below so it always shows something.
+// They are read live through /api/products (api/products.js), which calls the
+// Fourthwall Storefront API with the FOURTHWALL_TOKEN kept on the server.
+// If that call fails (or in local dev, where /api does not run) the page falls
+// back to the list below so it always shows something.
 
 export const SHOP_BASE = "https://point-of-view-tge-shop.fourthwall.com/en-eur";
-const API = "https://storefront-api.fourthwall.com/v1/collections/all/products";
-const TOKEN = import.meta.env.VITE_FW_TOKEN as string | undefined;
+const API = "/api/products";
 
 export type Product = {
   id: string;
@@ -102,9 +101,7 @@ type ApiProduct = {
 };
 
 export async function fetchProducts(signal?: AbortSignal): Promise<Product[]> {
-  if (!TOKEN) return FALLBACK_PRODUCTS;
-
-  const res = await fetch(`${API}?storefront_token=${TOKEN}&currency=EUR&size=50`, { signal });
+  const res = await fetch(API, { signal });
   if (!res.ok) throw new Error(`Storefront API: ${res.status}`);
 
   const data: { results?: ApiProduct[] } = await res.json();

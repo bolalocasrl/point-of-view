@@ -69,7 +69,7 @@ export default function Upcoming() {
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 md:mb-24">
           <span className="block text-xs font-bold uppercase tracking-widest text-white/50 mb-2">
-            (01.5) Next
+            (02) Next
           </span>
           <SectionTitle solid="Upcoming" outline="Events" />
         </div>

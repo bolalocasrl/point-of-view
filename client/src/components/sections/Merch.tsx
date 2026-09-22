@@ -25,7 +25,7 @@ export default function Merch() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-10 md:mb-24 flex flex-col md:flex-row justify-between items-start md:items-end z-10 relative">
         <div>
           <span className="block text-xs font-bold uppercase tracking-widest text-white/50 mb-2">
-            (04) Store
+            (05) Store
           </span>
           <SectionTitle solid="POV" outline="Merch" />
         </div>

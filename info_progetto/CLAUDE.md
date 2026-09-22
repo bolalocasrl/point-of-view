@@ -78,7 +78,7 @@ Supabase contiene dati reali. Prima di qualsiasi operazione sul database:
 ### Variabili d'ambiente su Vercel
 | Nome | A cosa serve |
 |---|---|
-| `VITE_FW_TOKEN` | Token pubblico Storefront API Fourthwall, usato da `/shop` |
+| `FOURTHWALL_TOKEN` | Token Storefront API Fourthwall, **solo lato server** in `api/products.js` (protetto) |
 | `BREVO_API_KEY` | Chiave Brevo, **solo lato server** in `api/subscribe.js` (protetta) |
 | `BREVO_LIST_ID` | Lista Brevo di destinazione delle iscrizioni (3 = POV WEBSITE) |
 
